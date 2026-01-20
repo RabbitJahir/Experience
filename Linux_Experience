@@ -1,9 +1,14 @@
 # Linux_experience
 My experience of linux
 
--> Everything is ABSURD yet, ENTERTAINING
--> AI has been a great help!<br>
--> Heroic launcher, to use epicgames<br>
--> 2 method to play roblox, sober(QR code quick login is better), or a hacking_like method. <br>
--> img2pdf, convert(converts any formats), pdftoppm(breaks the pdf pages to images), <br>
--> bluetoothctl(to see bluetooth things), USB tethering in andorid, to use wifi from the phone), do discoverable on and pairing on. <br>
+-> Everything is ABSURD yet, ENTERTAINING!
+-> AI has been a great help!
+
+-> Heroic launcher, to use epicgames.
+-> 2 method to play roblox, sober(QR code quick login is better), or a hacking_like method. 
+
+-> img2pdf, convert(converts any formats), pdftoppm(breaks the pdf pages to images).
+-> pdftoppm, converts images to pdf, and breaks pdf to images.
+-> qpdf "name_of.pdf" --pages . 01-101 -- name_of_new.pdf (breaks the pages of the pef to a new pdf).
+
+-> bluetoothctl(to see bluetooth things), USB tethering in andorid, to use wifi from the phone), do discoverable on and pairing on. 
