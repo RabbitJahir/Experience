@@ -451,121 +451,59 @@ const is the modern way.
 
 ---
 
-## Complex Routing
+## Professional Routing
 
 > Routing for bigger projects, better to learn this. **RouterProvider**
 
 > **main.jsx**
 >
 > ```jsx
-> import { createRoot } from "react-dom/client";
-> import "./index.css";
-> import App from "./App.jsx";
+>import { StrictMode } from "react";
+>import { createRoot } from "react-dom/client";
+>import "./index.css";
+>import { RouterProvider } from "react-router-dom";
+>import router from "./router/router";
 >
-> createRoot(document.getElementById("root")).render(<App />);
+>createRoot(document.getElementById("root")).render(
+>  <StrictMode>
+>    <RouterProvider router={router} />
+>  </StrictMode>
+>);
 > ```
 
 > **App.jsx**
 >
-> ```jsx
-> import { RouterProvider } from "react-router-dom";
-> import router from "./router/router";
->
-> const App = () => {
->   return <RouterProvider router={router} />;
-> };
->
-> export default App;
-> ```
+> Delete App.jsx and App.css
 
-> Make a new folder in **src**, name it `router`, inside `router.jsx`
+> Make a new folder named Pages/ MainPages, inside a new file named `Home`
+>```jsx
+>const Home = ()=>{
+>  return(
+>    <div>Home</div>
+>  )
+>}
+>
+>export default Home;
+>```
+
+> Make a new folder in **src**, name it `router`, inside router a new file, `router.jsx`
 >
 > ```jsx
-> import { createBrowserRouter } from "react-router-dom";
+>import { createBrowserRouter } from "react-router-dom";
+>import Home from "../MainPage/Home";
 >
-> import Home from "../MainPages/Home";
-> import S12 from "../MainPages/S12";
-> import Calendar from "../S12/Calendar/Calendar";
-> import Wad from "../S12/Wad/index";
-> import Opde from "../S12/Opde/index";
-> import Discrete from "../S12/Discrete/index";
-> import Oop from "../S12/Oop/index";
-> import Eee from "../S12/Eee/index";
-> import Ed from "../S12/Ed/index";
-> import Bs from "../S12/Bs/index";
-> import EeeLab from "../S12/Eee/EeeLab/EeeLab";
-> import OopMid from "../S12/Oop/OopMid";
-> import JavaCodes from "../S12/Oop/JavaCodes";
-> import BsTimeLine from "../S12/Bs/BsHistory/BsTimeLine";
-> import HtmlCodes from "../S12/Wad/HtmlCodes";
+>const router = createBrowserRouter([
+>  {
+>    path: "/",
+>    element: <Home />,
+>  },
+>]);
 >
-> const router = createBrowserRouter([
->   {
->     path: "/",
->     element: <Home />,
->   },
->   {
->     path: "/S12",
->     element: <S12 />,
->   },
->   {
->     path: "/S12/Calendar",
->     element: <Calendar />,
->   },
->   {
->     path: "/S12/Discrete",
->     element: <Discrete />,
->   },
->   {
->     path: "/S12/Wad",
->     element: <Wad />,
->   },
->   {
->     path: "/S12/Wad/HtmlCodes",
->     element: <HtmlCodes />,
->   },
->   {
->     path: "/S12/Oop",
->     element: <Oop />,
->   },
->   {
->     path: "/S12/Oop/JavaCodes",
->     element: <JavaCodes />,
->   },
->   {
->     path: "/S12/Oop/OopMid",
->     element: <OopMid />,
->   },
->   {
->     path: "/S12/Opde",
->     element: <Opde />,
->   },
->   {
->     path: "/S12/Eee",
->     element: <Eee />,
->   },
->   {
->     path: "/S12/Eee/EeeLab",
->     element: <EeeLab />,
->   },
->   {
->     path: "/S12/Ed",
->     element: <Ed />,
->   },
->   {
->     path: "/S12/Bs",
->     element: <Bs />,
->   },
->   {
->     path: "/S12/Bs/BsHistory/BsTimeLine",
->     element: <BsTimeLine />,
->   },
-> ]);
->
-> export default router;
+>export default router;
 > ```
 >
-> A sample Structure, **path names can never be same**, even when in same folder, for example for Eee and EeeLab, Opde and OpdeMid, they are in same folder, but path has something extra, name of that folder, to make it unique
+> A sample Structure, **path names can never be same**, even when in same folder, but path has something extra, name of that folder, to make a unique ID. Element is the name of the page the browser will load.
+> `path: "name"` has to be same as `<Link to="name">Name</Link>`
 
 ### children
 
