@@ -12,9 +12,19 @@ This README is for learning only. Reproduction or redistribution without giving 
 
 ---
 
+# Why React
+
+>Basic idea
+- Best for web apps, better SEO, SaaS(Software as a Service), smaller bundles, huge ecosystem.
+- Flutter is best for making one codebase for many devices, ios, android, windows, linux. Basically better for multiplatformed apps.
+
+
+
 ---
 
 > Link to Website: https://cse58.vercel.app/
+
+> Link to another Website: https://captaintodo.vercel.app/
 
 ---
 
@@ -581,6 +591,8 @@ const is the modern way.
 >
 > - React Router uses client-side routing.
 > - Pasting that code makes React Router takes over client-side and renders the correct page.
+> When choosing root path in hosting platforms, choose the folder that has package.json
+
 
 ---
 
