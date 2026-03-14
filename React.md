@@ -627,15 +627,49 @@ const is the modern way.
 >   plugins: [
 >     react(),
 >     ViteImageOptimizer({
->       includePublic: ["/S12/Calendar/*"], // Target your folder with images
->       png: { quality: 80 },
->       jpeg: { quality: 85 },
->       webp: { lossless: false, quality: 90 },
->       avif: { speed: 6, quality: 75 },
->     }),
+>      include: ["**/*.{png,jpg,jpeg,webp,avif,svg}"], //all images in asset
+>      includePublic: ["**/*.{png,jpg,jpeg,webp,avif,svg}"], //all imges in public
+>
+>      png: {
+>        quality: 70,
+>        compressionLevel: 9
+>      },
+>
+>      jpeg: {
+>        quality: 75,
+>        progressive: true
+>      },
+>
+>      webp: {
+>        quality: 80
+>      },
+>
+>      avif: {
+>        quality: 55,
+>        speed: 4
+>      },
+>
+>      svg: {
+>        multipass: true
+>      }
+>    }),
 >   ],
 > });
 > ```
+
+> Lazy Loading, Google it.
+
+> Responsive image format switching in react
+>
+>```jsx
+><picture>
+>  <source srcset="image.avif" type="image/avif">
+>  <source srcset="image.webp" type="image/webp">
+>  <img src="image.jpeg" alt="image">
+></picture>
+>```
+> avif/webp, smaller data with no resolution lost, faster loading.
+> must have the avif and webp version in the folder.
 
 ---
 
