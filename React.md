@@ -644,7 +644,7 @@ const is the modern way.
 >      },
 >      workbox: {
 >        // Cache all static assets (JS, CSS, HTML, images, avif, webp)
->        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,avif,webp}'],
+>        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,avif,webp}'], // NO,SPACE
 >        // Cache API calls (optional — customize the URL pattern), can remove this entire runtimeCaching scope if no backend
 >        runtimeCaching: [ 
 >          {
