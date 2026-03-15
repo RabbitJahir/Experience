@@ -705,6 +705,8 @@ const is the modern way.
 ></head>
 >```
 
+> `user-scalable = yes` so mobile users can zoom in and out, `maximum-scale=5.0` or remove it
+
 > In App.jsx to wrap up everything for better UI
 >```jsx
 >import { RouterProvider } from "react-router-dom";
