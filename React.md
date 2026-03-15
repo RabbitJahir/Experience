@@ -669,7 +669,7 @@ const is the modern way.
 ></picture>
 >```
 > avif/webp, smaller data with no resolution lost, faster loading.
-> must have the avif and webp version in the folder.
+> must have the avif and webp version in the folder.  
 
 ---
 
