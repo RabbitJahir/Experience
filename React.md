@@ -14,11 +14,10 @@ This README is for learning only. Reproduction or redistribution without giving 
 
 # Why React
 
->Basic idea
+> Basic idea
+
 - Best for web apps, better SEO, SaaS(Software as a Service), smaller bundles, huge ecosystem.
 - Flutter is best for making one codebase for many devices, ios, android, windows, linux. Basically better for multiplatformed apps.
-
-
 
 ---
 
@@ -249,7 +248,7 @@ This README is for learning only. Reproduction or redistribution without giving 
 > From index, we go to src folder.
 
 > index.css is inside src, to import
- ` import './name.css' `
+> `import './name.css'`
 
 ---
 
@@ -468,17 +467,17 @@ const is the modern way.
 > **main.jsx**
 >
 > ```jsx
->import { StrictMode } from "react";
->import { createRoot } from "react-dom/client";
->import "./index.css";
->import { RouterProvider } from "react-router-dom";
->import router from "./router/router";
+> import { StrictMode } from "react";
+> import { createRoot } from "react-dom/client";
+> import "./index.css";
+> import { RouterProvider } from "react-router-dom";
+> import router from "./router/router";
 >
->createRoot(document.getElementById("root")).render(
->  <StrictMode>
->    <RouterProvider router={router} />
->  </StrictMode>
->);
+> createRoot(document.getElementById("root")).render(
+>   <StrictMode>
+>     <RouterProvider router={router} />
+>   </StrictMode>,
+> );
 > ```
 
 > **App.jsx**
@@ -486,30 +485,29 @@ const is the modern way.
 > Delete App.jsx and App.css
 
 > Make a new folder named Pages/ MainPages, inside a new file named `Home`
->```jsx
->const Home = ()=>{
->  return(
->    <div>Home</div>
->  )
->}
 >
->export default Home;
->```
+> ```jsx
+> const Home = () => {
+>   return <div>Home</div>;
+> };
+>
+> export default Home;
+> ```
 
 > Make a new folder in **src**, name it `router`, inside router a new file, `router.jsx`
 >
 > ```jsx
->import { createBrowserRouter } from "react-router-dom";
->import Home from "../MainPage/Home";
+> import { createBrowserRouter } from "react-router-dom";
+> import Home from "../MainPage/Home";
 >
->const router = createBrowserRouter([
->  {
->    path: "/",
->    element: <Home />,
->  },
->]);
+> const router = createBrowserRouter([
+>   {
+>     path: "/",
+>     element: <Home />,
+>   },
+> ]);
 >
->export default router;
+> export default router;
 > ```
 >
 > A sample Structure, **path names can never be same**, even when in same folder, but path has something extra, name of that folder, to make a unique ID. Element is the name of the page the browser will load.
@@ -551,16 +549,15 @@ const is the modern way.
 
 ### a, Link, NavLink
 
->Never use buttons!
+> Never use buttons!
 
->```jsx
+> ```jsx
 > <a href="/something.pdf">only for downloading pdfs from public folder</a>
 >
 > <Link to="/src/Home">For paths inside pages or links to other websites</Link>
 >
 > <NavLink to="/src/About">Similar to Link but with unique css properties: activeClassName and activeStyle, best for navbars <NavLink>
->```
-
+> ```
 
 > AI it, play with it, learn it, your way.
 
@@ -591,8 +588,7 @@ const is the modern way.
 >
 > - React Router uses client-side routing.
 > - Pasting that code makes React Router takes over client-side and renders the correct page.
-> When choosing root path in hosting platforms, choose the folder that has package.json
-
+>   When choosing root path in hosting platforms, choose the folder that has package.json
 
 ---
 
@@ -609,132 +605,150 @@ const is the modern way.
 > installing plugin `npm install -D vite-plugin-pwa`
 
 > In vite.config.js
->```jsx
->import { defineConfig } from 'vite'
->import react from '@vitejs/plugin-react'
->import { VitePWA } from 'vite-plugin-pwa'
 >
->export default defineConfig({
->  plugins: [
->    react(),
->    VitePWA({
->      registerType: 'autoUpdate',  // auto-updates SW in background
->      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
->      manifest: {
->        name: 'My App',
->        short_name: 'MyApp',
->        description: 'My awesome app',
->        theme_color: '#ffffff',
->        background_color: '#ffffff',
->        display: 'standalone',       // hides browser UI — feels native
->        start_url: '/',
->        icons: [
->          {
->            src: 'pwa-192x192.png', //from public
->            sizes: '192x192',
->            type: 'image/png'
->          },
->          {
->            src: 'pwa-512x512.png', // from public
->            sizes: '512x512',
->            type: 'image/png',
->            purpose: 'any maskable'  // needed for Android adaptive icons
->          }
->        ]
->      },
->      workbox: {
->        // Cache all static assets (JS, CSS, HTML, images, avif, webp)
->        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,avif,webp}'], // NO,SPACE
->        // Cache API calls (optional — customize the URL pattern), can remove this entire runtimeCaching scope if no backend
->        runtimeCaching: [ 
->          {
->            urlPattern: /^https:\/\/your-api\.com\/.*$/,
->            handler: 'NetworkFirst',  // try network, fall back to cache
->            options: {
->              cacheName: 'api-cache',
->              expiration: {
->                maxEntries: 50,
->                maxAgeSeconds: 60 * 60 * 24  // 1 day
->              }
->            }
->          }
->        ]
->      }
->    })
->  ]
->})
->```
+> ```jsx
+> import { defineConfig } from "vite";
+> import react from "@vitejs/plugin-react";
+> import { VitePWA } from "vite-plugin-pwa";
+>
+> export default defineConfig({
+>   plugins: [
+>     react(),
+>     VitePWA({
+>       registerType: "autoUpdate", // auto-updates SW in background
+>       includeAssets: ["favicon.ico", "apple-touch-icon.png", "mask-icon.svg"],
+>       manifest: {
+>         name: "My App",
+>         short_name: "MyApp",
+>         description: "My awesome app",
+>         theme_color: "#ffffff",
+>         background_color: "#ffffff",
+>         display: "standalone", // hides browser UI — feels native
+>         start_url: "/",
+>         icons: [
+>           {
+>             src: "pwa-192x192.png", //from public
+>             sizes: "192x192",
+>             type: "image/png",
+>           },
+>           {
+>             src: "pwa-512x512.png", // from public
+>             sizes: "512x512",
+>             type: "image/png",
+>             purpose: "any maskable", // needed for Android adaptive icons
+>           },
+>         ],
+>       },
+>       workbox: {
+>         skipWaiting: true,
+>         clientsClaim: true,
+>         navigateFallback: "index.html",
+>         navigateFallbackDenylist: [/^\/api/, /\.pdf$/],
+>
+>         // ✅ Only precache small assets
+>         globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2,avif,webp}"],
+>
+>         // ✅ Exclude PDFs from precache entirely
+>         globIgnores: ["**/*.pdf"],
+>
+>         // ✅ Cache PDFs on-demand when user accesses them
+>         runtimeCaching: [
+>           {
+>             urlPattern: /\.pdf$/,
+>             handler: "CacheFirst",
+>             options: {
+>               cacheName: "pdf-cache",
+>               expiration: {
+>                 maxEntries: 50,
+>                 maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+>               },
+>               cacheableResponse: {
+>                 statuses: [200],
+>               },
+>             },
+>           },
+>         ],
+>       },
+>     }),
+>   ],
+> });
+> ```
 
 > Added logos in public folder `https://realfavicongenerator.net/` use this link.</br>
->public/ <br/>
->├── pwa-192x192.png<br/>
->├── pwa-512x512.png<br/>
->├── favicon.ico<br/>
->└── apple-touch-icon.png   ← important for iOS<br/>
+> public/ <br/>
+> ├── pwa-192x192.png<br/>
+> ├── pwa-512x512.png<br/>
+> ├── favicon.ico<br/>
+> └── apple-touch-icon.png ← important for iOS<br/>
 
 > In main.jsx
->```jsx
->import { createRoot } from "react-dom/client";
->import "./index.css";
->import App from "./App.jsx";
->import { registerSW } from 'virtual:pwa-register';
 >
->// Register service worker
->registerSW({
->  onNeedRefresh() {
->    if (confirm('New version available! Reload?')) {
->      updateSW(true);
->    }
->  },
->  onOfflineReady() {
->    console.log('App is ready to work offline');
->  },
->});
+> ```jsx
+> import { createRoot } from "react-dom/client";
+> import "./index.css";
+> import App from "./App.jsx";
+> import { registerSW } from "virtual:pwa-register";
 >
->createRoot(document.getElementById("root")).render(<App />);
->```
+> // Register service worker
+> registerSW({
+>   onNeedRefresh() {
+>     if (confirm("New version available! Reload?")) {
+>       updateSW(true);
+>     }
+>   },
+>   onOfflineReady() {
+>     console.log("App is ready to work offline");
+>   },
+> });
+>
+> createRoot(document.getElementById("root")).render(<App />);
+> ```
 
 > Add meta tags for iphone in index.html
->```html
-><head>
->  <meta name="apple-mobile-web-app-capable" content="yes" />
->  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
->  <meta name="apple-mobile-web-app-title" content="MyApp" />
->  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
->  <link rel="manifest" href="/manifest.webmanifest" />
-></head>
->```
+>
+> ```html
+> <head>
+>   <meta name="apple-mobile-web-app-capable" content="yes" />
+>   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+>   <meta name="apple-mobile-web-app-title" content="MyApp" />
+>   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+>   <link rel="manifest" href="/manifest.webmanifest" />
+> </head>
+> ```
 
 > `user-scalable = yes` so mobile users can zoom in and out, `maximum-scale=5.0` or remove it
 
 > In App.jsx to wrap up everything for better UI
->```jsx
->import { RouterProvider } from "react-router-dom";
->import router from "./router/router";
->import { useState, useEffect } from "react";
 >
->const App = () => {
->  const [isOnline, setIsOnline] = useState(navigator.onLine);
+> ```jsx
+> import { RouterProvider } from "react-router-dom";
+> import router from "./router/router";
+> import { useState, useEffect } from "react";
 >
->  useEffect(() => {
->    window.addEventListener('online', () => setIsOnline(true));
->    window.addEventListener('offline', () => setIsOnline(false));
->  }, []);
+> const App = () => {
+>   const [isOnline, setIsOnline] = useState(navigator.onLine);
 >
->  return (
->    <>
->      {!isOnline && (
->        <div className="bg-yellow-500 text-center p-2 text-sm">
->          You are offline — some features may be unavailable
->        </div>
->      )}
->      <RouterProvider router={router} />
->    </>
->  );
->};
+>   useEffect(() => {
+>     window.addEventListener("online", () => setIsOnline(true));
+>     window.addEventListener("offline", () => setIsOnline(false));
+>   }, []);
 >
->export default App;
->```
+>   return (
+>     <>
+>       {!isOnline && (
+>         <div className="bg-yellow-500 text-center p-2 text-sm">
+>           You are offline — some features may be unavailable
+>         </div>
+>       )}
+>       <RouterProvider router={router} />
+>     </>
+>   );
+> };
+>
+> export default App;
+> ```
+
+> `npm run build` to see if it build correctly, you will find issues,
 
 [TOP](#react)
 
@@ -765,32 +779,32 @@ const is the modern way.
 >   plugins: [
 >     react(),
 >     ViteImageOptimizer({
->      include: ["**/*.{png,jpg,jpeg,webp,avif,svg}"], //all images in asset
->      includePublic: ["**/*.{png,jpg,jpeg,webp,avif,svg}"], //all imges in public
+>       include: ["**/*.{png,jpg,jpeg,webp,avif,svg}"], //all images in asset
+>       includePublic: ["**/*.{png,jpg,jpeg,webp,avif,svg}"], //all imges in public
 >
->      png: {
->        quality: 70,
->        compressionLevel: 9
->      },
+>       png: {
+>         quality: 70,
+>         compressionLevel: 9,
+>       },
 >
->      jpeg: {
->        quality: 75,
->        progressive: true
->      },
+>       jpeg: {
+>         quality: 75,
+>         progressive: true,
+>       },
 >
->      webp: {
->        quality: 80
->      },
+>       webp: {
+>         quality: 80,
+>       },
 >
->      avif: {
->        quality: 55,
->        speed: 4
->      },
+>       avif: {
+>         quality: 55,
+>         speed: 4,
+>       },
 >
->      svg: {
->        multipass: true
->      }
->    }),
+>       svg: {
+>         multipass: true,
+>       },
+>     }),
 >   ],
 > });
 > ```
@@ -799,15 +813,16 @@ const is the modern way.
 
 > Responsive image format switching in react
 >
->```jsx
-><picture>
+> ```jsx
+> <picture>
 >  <source srcset="image.avif" type="image/avif">
 >  <source srcset="image.webp" type="image/webp">
 >  <img src="image.jpeg" alt="image">
-></picture>
->```
+> </picture>
+> ```
+>
 > avif/webp, smaller data with no resolution lost, faster loading.
-> must have the avif and webp version in the folder.  
+> must have the avif and webp version in the folder.
 
 ---
 
@@ -888,6 +903,7 @@ const is the modern way.
 # SEO, CRAWLERS, AI
 
 > React way of making a table.
+>
 > ```html
 > <table className="tailwindcss">
 >   <caption className="sr-only">
@@ -915,7 +931,8 @@ const is the modern way.
 >   </thead>
 > </table>
 > ```
->`caption` the tag crawlers, google, AI, etc looks for in a table for SEO purpose. `"sr-only"`. Screen-Read only, so the user cant see this, only the bots can.
+>
+> `caption` the tag crawlers, google, AI, etc looks for in a table for SEO purpose. `"sr-only"`. Screen-Read only, so the user cant see this, only the bots can.
 
 > Adding meta tags in head of html files. Google types of meta tags, how to use them, what they do.
 
