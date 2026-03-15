@@ -38,9 +38,10 @@ This README is for learning only. Reproduction or redistribution without giving 
 4. [Libraries](#libraries)
 5. [React Routing library](#react-router-dom)
 6. [Hosting](#hosting)
-7. [File Optimization](#optimization)
-8. [Build Tools & Performance Testing](#build-tools)
-9. [SEO](#seo-crawlers-ai)
+7. [Progressive WebApp](#pwa)
+8. [File Optimization](#optimization)
+9. [Build Tools & Performance Testing](#build-tools)
+10. [SEO](#seo-crawlers-ai)
 
 ---
 
@@ -247,9 +248,8 @@ This README is for learning only. Reproduction or redistribution without giving 
 
 > From index, we go to src folder.
 
-> index.css inside src, just the css code
-
-    structure ` import './name.css' `
+> index.css is inside src, to import
+ ` import './name.css' `
 
 ---
 
@@ -597,6 +597,142 @@ const is the modern way.
 ---
 
 ---
+
+[TOP](#react)
+
+---
+
+# PWA
+
+> To turn your website into a downloable, offline mode.
+
+> installing plugin `npm install -D vite-plugin-pwa`
+
+> In vite.config.js
+>```jsx
+>import { defineConfig } from 'vite'
+>import react from '@vitejs/plugin-react'
+>import { VitePWA } from 'vite-plugin-pwa'
+>
+>export default defineConfig({
+>  plugins: [
+>    react(),
+>    VitePWA({
+>      registerType: 'autoUpdate',  // auto-updates SW in background
+>      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+>      manifest: {
+>        name: 'My App',
+>        short_name: 'MyApp',
+>        description: 'My awesome app',
+>        theme_color: '#ffffff',
+>        background_color: '#ffffff',
+>        display: 'standalone',       // hides browser UI — feels native
+>        start_url: '/',
+>        icons: [
+>          {
+>            src: 'pwa-192x192.png', //from public
+>            sizes: '192x192',
+>            type: 'image/png'
+>          },
+>          {
+>            src: 'pwa-512x512.png', // from public
+>            sizes: '512x512',
+>            type: 'image/png',
+>            purpose: 'any maskable'  // needed for Android adaptive icons
+>          }
+>        ]
+>      },
+>      workbox: {
+>        // Cache all static assets (JS, CSS, HTML, images, avif, webp)
+>        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,avif,webp}'],
+>        // Cache API calls (optional — customize the URL pattern), can remove this entire runtimeCaching scope if no backend
+>        runtimeCaching: [ 
+>          {
+>            urlPattern: /^https:\/\/your-api\.com\/.*$/,
+>            handler: 'NetworkFirst',  // try network, fall back to cache
+>            options: {
+>              cacheName: 'api-cache',
+>              expiration: {
+>                maxEntries: 50,
+>                maxAgeSeconds: 60 * 60 * 24  // 1 day
+>              }
+>            }
+>          }
+>        ]
+>      }
+>    })
+>  ]
+>})
+>```
+
+> Added logos in public folder `https://realfavicongenerator.net/` use this link.</br>
+>public/ <br/>
+>├── pwa-192x192.png<br/>
+>├── pwa-512x512.png<br/>
+>├── favicon.ico<br/>
+>└── apple-touch-icon.png   ← important for iOS<br/>
+
+> In main.jsx
+>```jsx
+>import { createRoot } from "react-dom/client";
+>import "./index.css";
+>import App from "./App.jsx";
+>import { registerSW } from 'virtual:pwa-register';
+>
+>// Register service worker
+>registerSW({
+>  onNeedRefresh() {
+>    if (confirm('New version available! Reload?')) {
+>      updateSW(true);
+>    }
+>  },
+>  onOfflineReady() {
+>    console.log('App is ready to work offline');
+>  },
+>});
+>
+>createRoot(document.getElementById("root")).render(<App />);
+>```
+
+> Add meta tags for iphone in index.html
+>```html
+><head>
+>  <meta name="apple-mobile-web-app-capable" content="yes" />
+>  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+>  <meta name="apple-mobile-web-app-title" content="MyApp" />
+>  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+>  <link rel="manifest" href="/manifest.webmanifest" />
+></head>
+>```
+
+> In App.jsx to wrap up everything for better UI
+>```jsx
+>import { RouterProvider } from "react-router-dom";
+>import router from "./router/router";
+>import { useState, useEffect } from "react";
+>
+>const App = () => {
+>  const [isOnline, setIsOnline] = useState(navigator.onLine);
+>
+>  useEffect(() => {
+>    window.addEventListener('online', () => setIsOnline(true));
+>    window.addEventListener('offline', () => setIsOnline(false));
+>  }, []);
+>
+>  return (
+>    <>
+>      {!isOnline && (
+>        <div className="bg-yellow-500 text-center p-2 text-sm">
+>          You are offline — some features may be unavailable
+>        </div>
+>      )}
+>      <RouterProvider router={router} />
+>    </>
+>  );
+>};
+>
+>export default App;
+>```
 
 [TOP](#react)
 
