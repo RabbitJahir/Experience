@@ -13,6 +13,7 @@
 2. [Production app](#making-the-production-app)
 3. [App](#making-the-app)
 4. [Folder structure](#tauri-folder-structure)
+5. [Important](#important)
 
 ---
 
@@ -140,3 +141,8 @@ Push your code to GitHub and add a workflow file that builds on Windows automati
 
 > Can change your app's name.
 
+
+
+# Important
+
+> Obviously it is not mandatory to have a framework like react or next, or rust to make desktop apps. It depends on your need. Everything depends on your aim. Got the jist of tauri? Now get an aim and learn it.

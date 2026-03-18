@@ -114,4 +114,10 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 | Lite XL / Geany / Kate | Basic | GUI | Low | Easy | Lightweight GUI editing |
 | VS Code | Full | Partial | Medium-High | Easy | Best full IDE experience |
 
-> **Tip:** For low-end Linux laptops, the combination of **Neovim + Dart LSP** or **Helix** offers the most balance between performance, autocomplete, and code analysis. Use VS Code only if you have enough RAM to handle its heavier footprint.
+> **Tip:** For low-end Linux laptops, the combination of **Neovim / SubLime Text+ Dart LSP** or **Helix** offers the most balance between performance, autocomplete, and code analysis. Use VS Code only if you have enough RAM to handle its heavier footprint.
+
+# Flutter running online
+
+> `flulab.io`, make a simple project, understand it, covnert to dart, use AI, get the apk
+
+# Making a flutter project, desktop
