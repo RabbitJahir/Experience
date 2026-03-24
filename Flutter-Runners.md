@@ -1,3 +1,7 @@
+1) [Running Flutter](#running-flutter)
+2) [Running flutter on android](#running-on-android-via-usb)
+
+
 # Flutter Running Apps for Low-End PCs
 
 Developing Flutter applications on low-end PCs or laptops with limited RAM and CPU can be challenging. Choosing the right editor or IDE is crucial for smooth development, fast feedback, and minimal resource usage. Below is a detailed comparison of several editors suitable for Flutter development in low-RAM environments.
@@ -121,3 +125,38 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 > `flulab.io`, make a simple project, understand it, covnert to dart, use AI, get the apk
 
 # Making a flutter project, desktop
+
+---
+
+# Running Flutter
+
+> `flutter devices`, list of devices flutter can run on
+
+## Running on Chrome//browser
+
+> `flutter run -d chrome`, runs in chrome.
+
+## Running on android via USB
+
+#### setting up android toolchain
+
+1) `https://developer.android.com/studio#cmdline-tools`, download android studio or command line tools only (scroll down)
+2) install packages using this path, `cd ~/Android/Sdk/cmdline-tools/latest/bin` make sure the downloads are following this path, for more details google.
+3) `flutter config --android-sdk ~/Android/Sdk` telling flutter where the sdk is.
+
+#### setting up phone and running process
+
+1) get android developer, enable USB debugging  
+2) connect phone to laptop, enable file transfer
+3) (must have flutter installed), in terminal run `flutter doctor`, to check if flutter is ok
+4) run `adb devices`, Android Device Bridge devices, if you dont see your phone, make sure step 2 is done correctly, and check if wire has any issues. `lsusb` for linux users to check in another way.
+5) Final check `flutter devices`, if you see your device, cd to the project folder and `flutter run`.
+
+## Connecting via same wifi, to run without cable
+
+1) You need to complete step 5 from above.
+2) `adb tcpip 5555`, tcpip: switches to wifi, 5555: network port that adb uses
+3) `adb connect <PHONE_IP>:5555`, something like :`adb connect 192.168.0.105:5555`
+4) `flutter run`, takes a long while, can be upto 20 minutes.
+---
+

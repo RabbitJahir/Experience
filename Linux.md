@@ -70,3 +70,7 @@ My experience of linux
 
 * `curl ifconfig.me` public ip
 * `sudo lsof -i`, real time network connections
+
+# kdeconnect
+
+> connect linux to any kind of phone `sudo apt install kdeconnect`, kdeconnect-app. use phone screen to control screen mouse, share static files, custom commands, do anything...
