@@ -60,6 +60,7 @@
 >    "start": "next start",
 >    "lint": "eslint" `npm run lint`
 >  },
+>}
 > ```
 
 ## postcss.config.mjs
@@ -67,3 +68,14 @@
 - only because using tailwindcss
 
 ## tsconfig.json
+
+# Understanding
+
+> - next is folder based, want to make new pages? Create a new folder with the file named page.tsx, and call pages using folder name.
+>   - page.tsx sturcture:
+>     ```tsx
+>     export default function page/folder_name(){
+>     return(
+>       <div></div>  
+>     ) }
+>```

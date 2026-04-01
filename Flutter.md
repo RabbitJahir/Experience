@@ -1,7 +1,6 @@
 1. [Folder Structure](#folder-structure)
 2. [Changing App Icon](#changing-app-icon)
 3. [Running Flutter](#running-flutter)
-4. [Running flutter on android](#running-on-android-via-usb)
 
 # Flutter Running Apps for Low-End PCs
 
@@ -137,6 +136,9 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 
 # Starting
 
+> `flutter create app_name`, app_name has to be small and no space
+
+> Widgets are capital, Arguements are small
 ---
 
 # Folder Structure
@@ -164,7 +166,7 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 
 > make `assests` folder in root folder where pubspec.yaml is. Inside assets make `icon` folder, and add your something.png.
 
-> Come to `pubspec.yaml`,
+> Come to `pubspec.yaml`, 
 >
 > ```dart
 > dev_dependencies:
@@ -172,8 +174,7 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 >    sdk: flutter        # Flutter's built-in testing framework
 >  flutter_launcher_icons: ^0.13.1 # add this line
 > ```
->
-> add this code
+> & and this code
 >
 > ```jsx
 > flutter_launcher_icons: android: "launcher_icon";
@@ -190,11 +191,11 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 > `flutter analyze`, analyze before running
 > `flutter devices`, list of devices flutter can run on
 
-## Running on Chrome//browser
+## ---> Running on Chrome//browser
 
 > `flutter run -d chrome`, runs in chrome.
 
-## Running on android via USB
+## ---> Running on android via USB
 
 #### setting up android toolchain
 
