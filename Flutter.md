@@ -147,6 +147,8 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 
 - where all edits are done
 
+# 
+
 ### pubspec.yaml
 
 - indentation driven
@@ -194,8 +196,9 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 ## ---> Running on Chrome//browser
 
 > `flutter run -d chrome`, runs in chrome.
+> `flutter run -d web-server`, better
 
-## ---> Running on android via USB
+## ---> Running on android 
 
 #### setting up android toolchain
 
@@ -203,7 +206,7 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 2. install packages using this path, `cd ~/Android/Sdk/cmdline-tools/latest/bin` make sure the downloads are following this path, for more details google.
 3. `flutter config --android-sdk ~/Android/Sdk` telling flutter where the sdk is.
 
-#### setting up phone and running process
+#### setting up phone and running process with cable
 
 1. get android developer, enable USB debugging
 2. connect phone to laptop, enable file transfer
