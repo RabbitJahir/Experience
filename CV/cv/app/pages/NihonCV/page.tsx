@@ -251,8 +251,8 @@ const BTN_SMALL: React.CSSProperties = {
 
 export default function NihonCV() {
   const [info, setInfo] = useState<PersonalInfo>({
-    fullName: "", dob: "", gender: "", address: "",
-    phone: "", email: "", statement: "",
+    fullName: "Kazi Rabit Jahir", dob: "2005/05/07", gender: "Male", address: "",
+    phone: "01796666794", email: "alltimer785@gmail.com", statement: "",
     commute: "", dependents: "", health: "", date: "", signature: "",
   });
 

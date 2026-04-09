@@ -2,6 +2,12 @@
 2. [Changing App Icon](#changing-app-icon)
 3. [Running Flutter](#running-flutter)
 
+# Websites
+
+- [codemagic](https://codemagic.io/start/)
+
+---
+
 # Flutter Running Apps for Low-End PCs
 
 Developing Flutter applications on low-end PCs or laptops with limited RAM and CPU can be challenging. Choosing the right editor or IDE is crucial for smooth development, fast feedback, and minimal resource usage. Below is a detailed comparison of several editors suitable for Flutter development in low-RAM environments.
@@ -139,6 +145,7 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 > `flutter create app_name`, app_name has to be small and no space
 
 > Widgets are capital, Arguements are small
+
 ---
 
 # Folder Structure
@@ -147,7 +154,7 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 
 - where all edits are done
 
-# 
+#
 
 ### pubspec.yaml
 
@@ -168,7 +175,7 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 
 > make `assests` folder in root folder where pubspec.yaml is. Inside assets make `icon` folder, and add your something.png.
 
-> Come to `pubspec.yaml`, 
+> Come to `pubspec.yaml`,
 >
 > ```dart
 > dev_dependencies:
@@ -176,6 +183,7 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 >    sdk: flutter        # Flutter's built-in testing framework
 >  flutter_launcher_icons: ^0.13.1 # add this line
 > ```
+>
 > & and this code
 >
 > ```jsx
@@ -198,7 +206,7 @@ VS Code is one of the most popular IDEs for Flutter development, offering extens
 > `flutter run -d chrome`, runs in chrome.
 > `flutter run -d web-server`, better
 
-## ---> Running on android 
+## ---> Running on android
 
 #### setting up android toolchain
 
