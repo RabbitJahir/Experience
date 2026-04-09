@@ -1,4 +1,5 @@
 # Linux_experience
+
 My experience of linux
 
 -> Everything is ABSURD yet, ENTERTAINING!
@@ -7,70 +8,100 @@ My experience of linux
 -> sudo dpkg -i name_of.deb (Data PacKet manaGer, install, name of that deb)
 
 -> Heroic launcher, to use epicgames.
--> 2 method to play roblox, sober(QR code quick login is better), or a hacking_like method. 
+-> 2 method to play roblox, sober(QR code quick login is better), or a hacking_like method.
 
--> img2pdf, convert(converts any formats), 
+-> img2pdf, convert(converts any formats),
 -> pdftoppm(breaks the pdf pages to images).
 -> pdftoppm, converts images to pdf, and breaks pdf to images.
 -> qpdf "name_of.pdf" --pages . 01-101 -- name_of_new.pdf (breaks the pages of the pdf to a new pdf).
 -> convert, (sudo apt isntall imagemagick)
 
-. 
-
+.
 
 ## sudo apt install poppler-utils
 
 > - pdfunite first.pdf second.pdf third.pdf merged.pdf
 
-# packages 
+# packages
 
-* `dpkg -l` list all packages
-* `apt-mark showmanual` see packages downloaded manually
-* `grep " install " /var/log/apt/history.log` see packages downloaded recently
-* `sudo apt remove package_name`  keeps data
-* `sudo apt purge package_name` deletes data too
+- `dpkg -l` list all packages
+- `apt-mark showmanual` see packages downloaded manually
+- `grep " install " /var/log/apt/history.log` see packages downloaded recently
+- `sudo apt remove package_name` keeps data
+- `sudo apt purge package_name` deletes data too
 
 # Bluetooth
 
-* `bluetoothctl` (to see bluetooth things), USB tethering in andorid, to use wifi from phone
-* do `discoverable on` and `pairing on`
+- `bluetoothctl` (to see bluetooth things), USB tethering in andorid, to use wifi from phone
+- do `discoverable on` and `pairing on`
 
 # Data usage in linux/debian-based
 
-* `sudo apt install vnstat` 
+- `sudo apt install vnstat`
 
-* `sudo apt install iftop` 
+- `sudo apt install iftop`
 
-* `sudo apt install nload` 
+- `sudo apt install nload`
 
-* `watch -n 1 'echo "RX MB:" $(( $(cat /sys/class/net/wlan0/statistics/rx_bytes) /1024/1024 )); echo "TX MB:" $(( $(cat /sys/class/net/wlan0/statistics/tx_bytes) /1024/1024 ))' ` 
+- `watch -n 1 'echo "RX MB:" $(( $(cat /sys/class/net/wlan0/statistics/rx_bytes) /1024/1024 )); echo "TX MB:" $(( $(cat /sys/class/net/wlan0/statistics/tx_bytes) /1024/1024 ))' `
 
-* `sudo apt install bmon`, bmon, try this.
+- `sudo apt install bmon`, bmon, try this.
 
-* `sudo apt install nethogs`, just see sent, received and total bandwidth
+- `sudo apt install nethogs`, just see sent, received and total bandwidth
 
 # shows CPU, RAM, disk, processes, and network usage
 
-* `sudo apt install btop`, btop, check everything!
+- `sudo apt install btop`, btop, check everything!
 
-* `df -h` check disk usage, and free dish, in human-readeable format
+- `df -h` check disk usage, and free dish, in human-readeable format
 
+- `lsblk`
+
+- `fdisk -l`
+
+- `fsck -p location`, chek space, `fsck`
+
+- `dmesg` , `dmesg | grep name`, diagnostic msg
 
 # random
 
-* `sudo apt install cmatrix`, cmatrix, show green matrix like symbols falling
+- `sudo apt install cmatrix`, cmatrix, show green matrix like symbols falling
 
-* ` sudo apt install cowsay fortune`, quotes, fortune, fortune | cowsay
+- ` sudo apt install cowsay fortune`, quotes, fortune, fortune | cowsay
 
-* `sudo apt install tree`, tree ~ , shows all files and directories inside the device.
+- `sudo apt install tree`, tree ~ , shows all files and directories inside the device.
 
-* `sudo apt install ncdu`, ncdu ~, shows disk usage and interactive
+- `sudo apt install ncdu`, ncdu ~, shows disk usage and interactive
+
+- `sudo apt install fim`, see images on terminal
 
 # networks
 
-* `curl ifconfig.me` public ip
-* `sudo lsof -i`, real time network connections
+- `curl ifconfig.me` public ip
+- `sudo lsof -i`, real time network connections
+- `iwconfig`
+
+- `ifconfig name up/down` & `ifconfig name1 hw name1 number`, name=[mac, wlan0, eth0], name2 = [name before address ], number = [new address]
 
 # kdeconnect
 
 > connect linux to any kind of phone `sudo apt install kdeconnect`, kdeconnect-app. use phone screen to control screen mouse, share static files, custom commands, do anything...
+
+> ### writing to android  
+* ssh on both linux and termux, google, AI  
+  * #### Termux
+    - sshd
+    - `passwd`, enter password
+    - `whoami`, username
+    - `ip a`, ipAddr
+    - `sshd -p 8022`
+  * #### Linux
+    - `sudo systemctl start ssh`
+    - `sudo systemctl enable ssh`
+    - `sudo systemctl status ssh`
+    - `ssh -p 8022 username@ipAddr`, enter password
+    - `~/.ssh/known_hosts`
+
+> #### apache2
+
+  * `sudo systemctl start apache2`
