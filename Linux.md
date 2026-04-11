@@ -87,21 +87,3 @@ My experience of linux
 
 > connect linux to any kind of phone `sudo apt install kdeconnect`, kdeconnect-app. use phone screen to control screen mouse, share static files, custom commands, do anything...
 
-> ### writing to android  
-* ssh on both linux and termux, google, AI  
-  * #### Termux
-    - sshd
-    - `passwd`, enter password
-    - `whoami`, username
-    - `ip a`, ipAddr
-    - `sshd -p 8022`
-  * #### Linux
-    - `sudo systemctl start ssh`
-    - `sudo systemctl enable ssh`
-    - `sudo systemctl status ssh`
-    - `ssh -p 8022 username@ipAddr`, enter password
-    - `~/.ssh/known_hosts`
-
-> #### apache2
-
-  * `sudo systemctl start apache2`
