@@ -6,9 +6,22 @@
 
 > `global.css`, the css that links in everypage
 
-### layout.tsx
+#### layout.tsx
 
 >  `Metadata` SEO section
+
+#### globals.css
+
+> css that applies everywhere
+
+#### components
+
+> codes/ logics that requires  to be used in many pages,
+> make once use anywhere
+
+#### hooks
+
+> same as components, but custom made logics, easier to maintain in bigger projects
 
 ## node_modulus
 
