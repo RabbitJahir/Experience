@@ -206,11 +206,12 @@ F5
 
 ## Navigation
 
-- Ctrl + P -> open file
-- Ctrl + Shift + O -> go to function/symbol
-- F12 -> go to definition
-- Alt + F12 -> peek definition
+- `Ctrl + P` -> open file
+- `Ctrl + Shift + O` -> go to function/symbol
+- `F12` -> go to definition
+- `Alt + F12` -> peek definition
 - `Alt + number` -> toggle between open tabs
+- `Ctrl + Tab` -> toggle between open tabs
 - `Ctrl + W` -> Close current tab
 
 ## Editing
