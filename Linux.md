@@ -75,6 +75,15 @@ My experience of linux
 
 - `sudo apt install fim`, see images on terminal
 
+> `sudo apt install ghostscript`
+>```bash
+> gs -sDEVICE=pdfwrite \
+> -dCompatibilityLevel=1.4 \
+> -dPDFSETTINGS=/ebook \
+> -dNOPAUSE -dQUIET -dBATCH \
+> -sOutputFile=output.pdf input.pdf
+>```
+
 # networks
 
 - `curl ifconfig.me` public ip
