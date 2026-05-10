@@ -5,6 +5,8 @@
 > install mysql
 > `sudo apt install mysql-server -y`
 
+> see mysql path: `which mysql`
+
 > run:   `sudo systemctl start mysql`
 > check: `sudo systemctl status mysql`
 > login: `sudo mysql -u root -p` or `mysql`
