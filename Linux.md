@@ -77,11 +77,7 @@ My experience of linux
 
 > `sudo apt install ghostscript`
 >```bash
-> gs -sDEVICE=pdfwrite \
-> -dCompatibilityLevel=1.4 \
-> -dPDFSETTINGS=/ebook \
-> -dNOPAUSE -dQUIET -dBATCH \
-> -sOutputFile=output.pdf input.pdf
+> gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
 >```
 
 # networks
