@@ -22,13 +22,7 @@ My experience of linux
 
 > - pdfunite first.pdf second.pdf third.pdf merged.pdf
 
-# packages
 
-- `dpkg -l` list all packages
-- `apt-mark showmanual` see packages downloaded manually
-- `grep " install " /var/log/apt/history.log` see packages downloaded recently
-- `sudo apt remove package_name` keeps data
-- `sudo apt purge package_name` deletes data too
 
 # Bluetooth
 
