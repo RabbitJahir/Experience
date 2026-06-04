@@ -251,7 +251,7 @@ Check:
 
 ---
 
-# 🛠️ BONUS TOOLS (Optional)
+# BONUS TOOLS (Optional)
 
 * VirusTotal: [https://www.virustotal.com](https://www.virustotal.com)
 * urlscan: [https://urlscan.io](https://urlscan.io)
