@@ -265,7 +265,7 @@ Tile size affects everything:
 
 ---
 
-# 🗺️ 2. Map Size (World Dimensions)
+# 2. Map Size (World Dimensions)
 
 ## What is Map Size?
 
@@ -339,7 +339,7 @@ Downside:
 
 ---
 
-# ♾️ 3. Infinite Maps (Procedural / Chunk-Based Maps)
+# 3. Infinite Maps (Procedural / Chunk-Based Maps)
 
 ## What is an Infinite Map?
 

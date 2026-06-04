@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A4 Cover Page</title>
+
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        background: #ddd9cf;
+        font-family: Georgia, serif;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+
+        margin: 20px auto;
+        padding: 25mm;
+
+        background: white;
+
+        position: relative;
+
+        page-break-after: always;
+        break-after: page;
+
+        overflow: hidden;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+
+        .page {
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+
+      /* ─── COVER PAGE ───────────────────────── */
+
+      .cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        text-align: center;
+      }
+
+      .top-section h1 {
+        margin: 0;
+        font-size: 36px;
+      }
+
+      .top-section h2,
+      .top-section h3 {
+        margin: 8px 0;
+        font-weight: bold;
+        font-size: 30px;
+      }
+
+      .middle-section {
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .middle-section img {
+        width: 400px;
+        opacity: 4;
+      }
+
+      .bottom-section {
+        width: 100%;
+        text-align: left;
+      }
+
+
+      .submitted h2,
+      .teacher h2 {
+        font-weight: bold;
+        margin-top: 10px;
+        padding-bottom: 5px;
+      }
+
+      .submitted p,
+      .teacher p {
+        margin: 2px 0;
+        font-weight: 500;
+        font-size: 25px;
+      }
+
+      .date {
+        margin-top: 40px;
+        font-size: 26px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="page cover">
+
+      <!-- TOP -->
+      <div class="top-section">
+        <h1>Bangladesh Studies: History & Culture</h1>
+        <h2>GED0222121</h2>
+        <h3>Assignment on<br/>Bangladesh National Museum</h3>
+        <h3>Department: Computer Science and Engineering</h3>
+      </div>
+
+      <!-- CENTER LOGO -->
+      <div class="middle-section">
+        <img src="uits.png" alt="University Logo" />
+      </div>
+
+      <!-- BOTTOM -->
+      <div class="bottom-section">
+        <div class="teacher">
+          <h2>Instructors</h2>
+          <p>Zakia Sultana, Associate professor</p>
+        </div>
+
+        <div class="submitted">
+          <h2>Submitted By</h2>
+          <p>Kazi Rabit Jahir</p>
+          <p>ID: 04325205101006</p>
+          <p>Batch: 58</p>
+        </div>
+
+        <div class="date">
+          May 21, 2026
+        </div>
+
+      </div>
+
+    </section>
+  </body>
+</html>
