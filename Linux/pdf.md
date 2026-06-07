@@ -6,6 +6,10 @@
 > gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
 >``` 
 
+> # to edit pdfs with GUI (pdfarranger)
+>```bash
+> sudo apt install pdfarranger
+>```
 
 > # Poppler-utils Cheat Sheet (Linux PDF Tools)
 > 
@@ -20,21 +24,17 @@
 > > - `pdfunite file1.pdf file2.pdf file3.pdf output.pdf`
 > 
 > ---
-> 
+ 
 > ## Split PDF into pages
 > - `pdfseparate input.pdf page-%d.pdf`
-> 
-> Example:
-> - `pdfseparate file.pdf page-%d.pdf`
-> 
-> ---
-> 
+> - `qpdf input.pdf --pages input.pdf 91-100 -- pages-91-100.pdf`
+ 
 > ## Convert PDF to text
 > - `pdftotext file.pdf output.txt`
-> 
+ 
 > ### Preserve layout
 > - `pdftotext -layout file.pdf output.txt`
-> 
+ 
 > ### Extract specific pages
 > - `pdftotext -f 1 -l 3 file.pdf output.txt`
 > 
