@@ -7,17 +7,21 @@
 
 > see mysql path: `which mysql`
 
-> run:   `sudo systemctl start mysql`
-> check: `sudo systemctl status mysql`
-> login: `sudo mysql -u root -p` or `mysql`
+> run:   `sudo systemctl start mysql`  
+> check: `sudo systemctl status mysql`  
+> login: `sudo mysql -u root -p` or `mysql`  
+> exit: `EXIT;`
 
 > show all db      : `SHOW DATABASES;`
 > create new db    : `CREATE DATABASE database_name;`
 > change current db: `USE database_name;`
 > delete db        : `DROP DATABASE database_name;`
 
-!!!NEVER DELETE GIVEN DB INSIDE MYSQL:
-sys, information_schema, performance_schema, mysql!!!
+> !!!NEVER DELETE GIVEN DB INSIDE MYSQL:
+> - sys
+> - information_schema 
+> - performance_schema
+> - mysql!!!
 
 > Create a new user:
 > `CREATE USER 'phpuser'@'localhost' IDENTIFIED BY '1234';`
