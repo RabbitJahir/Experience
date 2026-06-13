@@ -11,6 +11,11 @@
 > sudo apt install pdfarranger
 >```
 
+>in linux terminal, to convert any html file
+>```bash
+> google-chrome --headless --print-to-pdf=the-pdf.pdf the-html-file.html
+>```
+
 > # Poppler-utils Cheat Sheet (Linux PDF Tools)
 > 
 > ## Install
