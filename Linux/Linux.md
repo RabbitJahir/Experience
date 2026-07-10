@@ -5,10 +5,8 @@ My experience of linux
 -> Everything is ABSURD yet, ENTERTAINING!
 -> AI has been a great help!
 
-
 -> Heroic launcher, to use epicgames.
 -> 2 method to play roblox, sober(QR code quick login is better), or a hacking_like method.
-
 
 # Bluetooth
 
@@ -55,3 +53,31 @@ My experience of linux
 
 > connect linux to any kind of phone `sudo apt install kdeconnect`, kdeconnect-app. use phone screen to control screen mouse, share static files, custom commands, do anything...
 
+## Make a copy of everything
+
+> ### makes a copy of all apts
+>
+> ```bash
+> apt-mark showmanual > ~/manual-packages.txt
+> ```
+>
+> ### update and install from that list
+>
+> ```bash
+> - sudo apt update
+> - sudo xargs -a manual-packages.txt apt install -y
+> ```
+
+> ### makes copy of all dpkg
+>
+> ```bash
+> dpkg --get-selections > ~/dpkg-selections.txt
+> ```
+>
+> ### for restoring
+>
+> ```bash
+> sudo dpkg --set-selections < dpkg-selections.txt
+> sudo apt-get dselect-upgrade
+>
+> ```
