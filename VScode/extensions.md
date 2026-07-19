@@ -61,7 +61,7 @@
 
 # Overall
 
-- Better Comments
+- Better Comments (best for highlighting)
 - Prettier - Code formatter
 - Github Copilot Chat
 - GitHub Codespaces
