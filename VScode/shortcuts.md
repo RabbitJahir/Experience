@@ -80,11 +80,12 @@ Open settings:
 ```
 Ctrl + ,
 ```
-search for: 
 
-- auto save 
+search for:
+
+- auto save
 - tab -> 2 (web) / 4 (backend languages)
-- word wrap 
+- word wrap
 - auto
 - color theme
 - formatter
@@ -172,10 +173,38 @@ F5
 - `Ctrl + \` -> split editor
 - `Ctrl + Alt + B` -> toggle AI bar
 
----
+##
 
 ---
 
+# Setting up shorcut functions
+
+### making a custom function for any language
+
+- Press `Ctrl + Shift + P`
+- Paste / type `Configure User Snippets`
+
+- For example, choose cpp.json, and paste this
+
+```cpp
+{
+	"c++ initial code": {
+		"prefix": "cpp",
+		"body": [
+			"#include <bits/stdc++.h>",
+			"using namespace std;",
+			"",
+			"int main(){",
+			"",
+			"    return 0;",
+			"}"
+		],
+    "description": "If you want any"
+	}
+}
+```
+- make a cpp file and write cpp and tab
+
 ---
-
-
+---
+---
