@@ -70,3 +70,5 @@
 - IntelliCode
 - Material Icon Theme
 - Live Share
+
+- Figure

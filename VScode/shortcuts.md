@@ -144,6 +144,8 @@ F5
 
 ## Navigation
 
+- `Ctrl + K, Ctrl + S` -> See all current shorcuts in your vscode
+
 - `Ctrl + P` -> open file
 - `Ctrl + Shift + O` -> go to function/symbol
 - `F12` -> go to definition
@@ -169,9 +171,9 @@ F5
 ## UI
 
 - `Ctrl + B` -> toggle files sidebar
-- `Ctrl + ` -> toggle terminal
+- `Ctrl + ~ ` -> toggle terminal
 - `Ctrl + \` -> split editor
-- `Ctrl + Alt + B` -> toggle AI bar
+- `Ctrl + Alt + B` -> toggle CoPilot bar
 
 ##
 
