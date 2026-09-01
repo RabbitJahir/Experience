@@ -3,3 +3,13 @@
 > https://www.insmind.com/
 
 > https://codewiki.google/
+
+> https://www.writefull.com/
+
+> https://www.audemic.app/
+
+> https://www.oreateai.com/home/index
+
+> https://www.researchrabbit.ai/
+
+> https://aiengineeringfromscratch.com/
