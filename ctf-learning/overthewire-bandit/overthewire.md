@@ -1,0 +1,144 @@
+### overthewire.org
+- start with bandit
+
+--------------------------
+level-0
+- ssh -p 2220 bandit.labs.overthewire.org (wait till loads)
+- give password, and might encounter password not working
+- !!! You are trying to log into this SSH server on port 2220 with a username
+!!! that does not match the bandit game.
+- trying to access the link with local username 
+- ssh -p 2220 bandit0@bandit.labs.overthewire.org (use this username to login)
+- then try password
+---------------------------
+level-0-1
+- [ pwd ] (see current directory)
+- [ cd ~ ] ( go to home directory)
+- [ cat readme ]
+- [ cat readme | grep "password" ]
+- [ 6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR ]
+------------------------------
+level-1-2
+- [ - ] ( has special meanings in linux )
+- [ cat ./- ]
+- [ PK8fYLZg2hnHSz83plBL1iEPKdD3QToB ]
+------------------------------
+level-2-3
+- [ -- ] (special meaning)
+- [  ] (spaces)
+- for space, quatation or \
+- for special-meaning, ./
+- [ cat "./--spaces in this filename--" ]
+- [ cat ./--spaces\ in\ this\ filename-- ]
+- [ 7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME ]
+-------------------------------
+level-3-4
+- [ cd inhere ]
+- [ ls -a ]
+- [ cat ...Hiding-From-You]
+- [ xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq ]
+-------------------------------
+level-4-5
+- [ cd inhere ]
+- use [ cat ./-file00 ] on everyfile
+- [ file ./* ] (see the types of file)
+- [ 6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG ]
+-------------------------------
+level-5-6
+- [ find . -type f -size 1033c ] (find here type file size 1033 bytes)
+- [ file file ] (type of file)
+- [ ls -l file ] (see permissions and if its executable or not)
+- [ ls -a ] (filename structure matters, - this . are not same )
+- [ pXa26xhMWaC2SvDotA4r9EgZkulOeSBW ]
+-------------------------------
+level-6-7
+- [ cd / ] (in root system)
+- [ find / -type f -user bandit7 -group bandit6 -size 33c ]
+- [ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null ] (2>/dev/null removes the permissio denied files)
+- [ Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3 ] 
+
+-------------------------------
+level-7-8
+- [ cat file.txt ]
+- [ cat data.txt | grep "millionth" ]
+- [ VR1ljMayciFxbnUokuQmJFw6QC9VKtub ]
+-------------------------------
+level-8-9
+- [ sort data.txt ]
+- [ sort data.txt | uniq -c ] (count and show)
+- [ sort data.txt | uniq -u ] (show only unique)
+- [ EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl ]
+-------------------------------
+level-9-10
+- [ cat data.txt | grep "=" ] (cat prints everything) (show raw content)
+- [ strings data.txt | grep "=" ] (string prints human-readable texts ) (extract human-readable)
+- [ B0s2khmbT9u0geKuOoVGW3JZKhndE3BG ]
+-------------------------------
+level-10-11
+- [ cat data.txt ]
+- [ base64 -decode data.txt ], [ base64 -d data.txt ]
+- [ cat data.txt | base64 -d ]
+- [ pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro ]
+-------------------------------
+level-11-12
+- [ cat data.txt ]
+- [ tr "A-Za-z" "N-ZA-Mn-za-m" < data.txt ] (change a-z, start with n-z then a-m, 13+13 = 26)
+- [ Original:  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+ROT13:     N O P Q R S T U V W X Y Z A B C D E F G H I J K L M ]
+- [ GROozWPO8QyN0mGrjUkID0WCYkZiQxrN ]
+-------------------------------
+level-12-13
+- [ xxd -l 16 data.txt ] (the last part will indicate that this txt is a hex dump)
+- [ cd /tmp ]
+- [ mktemp -d ]
+- [ cd to that location ]
+- we are going to decompress the file so, its better to do it somewhere else 
+- [ cp ~/data.txt . ]
+- [ xxd -r data.txt data ] (decompress once ) [ file data ] (check what kind of property it has)
+- ( data: gzip compressed data, was "data2.bin", last modified: Sat Sep 26 21:54:21 2026, max compression, from Unix, original size modulo 2^32 584 )
+- the file is gzip compressed, it orginally was data2.bin
+- [ gzip --help ] (find command that decompresses)
+- [ gzip -d data ] (gzip: data: unknown suffix -- ignored) (gzip needs a file ending in gz)
+- [ mv data data.gz ]
+- again check the data using file
+- for me it's bz2 now,
+- [ mv data data.bz2 ]
+- decompress
+- did it again and decompressed gzip and found (data: POSIX tar archive (GNU) )
+- [ tar -tf data ] (tar -t(list) -f data(use file named data) ) (not extracting just seeing whats inside)
+- [ tar -xf data ] (-x extract)
+- use file again, i found out that its another tar
+- can use bzip2 to .bin, but cannot use gzip to .bin
+- [ qQYQiHOBPR8zR61qxYqX45quvihF2uzk ]
+- a long haul.
+-------------------------------
+level-13-14
+- sshkey.private is the key for next level
+- but to enter that level we usually use a password, since theres no password but a private ssh key, we need to use ssh command and that key to get into the bandit 14
+- inside bandit13 use [ ssh -p 2220 -i sshkey.private bandit14@bandit.labs.overthewire.org ] read the error if you get it
+- if you get error, it might say can not login from localhost, but need to login from machine directly, so
+- we need to copy the sshkey.private to localhost and then use that same command from local machine
+- to copy i used, went to machine first and then [ ssh -p 2220 bandit13@bandit.labs.overthewire.org 'cat sshkey.private' > file.txt ], go there and use the exact command, so cat that and show the key and then > means write/overwrite this content to there
+- teaching SSH key-based authentication!!!!!!
+-------------------------------
+level-14-15
+- [ ssh -p 30000 -i file.txt bandit15@bandit.labs.overthewire.org ]
+- but the level did not tell us to ssh to port 30000, it just said port 30000 localhost
+- here localhost means current level, so run this from current level, bandit14
+- but even then its not saying to ssh, just a port, for just a port connection, netcat(nc)
+- [ nc -v localhost 30000 ] (verbose, tell us what nc is doing)(hit enter and read)
+- [ cat /etc/bandit_pass/bandit14 ] (level 13 told us that the password for level 14 was here)
+- [ pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7 ]
+-------------------------------
+level-15-16
+
+-------------------------------
+-------------------------------
+-------------------------------
+-------------------------------
+-------------------------------
+-------------------------------
+-------------------------------
+-------------------------------
+-------------------------------
+-------------------------------

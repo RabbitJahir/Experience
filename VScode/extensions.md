@@ -8,7 +8,7 @@
 - Extension Pack for Java (Microsoft)
 - Debugger for Java
 - Maven for Java (optional)
-
+- Material Icon Theme
 ---
 
 ## Python
@@ -71,4 +71,6 @@
 - Material Icon Theme
 - Live Share
 
-- Figure
+- vscode-pdf
+
+- Figure
