@@ -122,6 +122,11 @@ SHOW TABLES;
 \c
 ```
 
+## Clear terminal command
+```sql
+\! clear
+```
+
 ## Describe table, open the table
 
 ```sql

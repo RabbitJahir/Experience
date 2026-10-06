@@ -107,7 +107,7 @@
 - grep -i "PassWORD" file.txt (case insensitive)
 - grep -n "password" file.txt (show line numbers )
 - grep -E "password|passwd|secret|token|key" config.txt (-E multiple patterns)
-- grep -iE "password|passwd|secret|token|key" config.txt (case-insensitive and multiple patterns)
+- grep -i "password|passwd|secret|token|key" config.txt (case-insensitive )
 - grep r "password". (recursive)
 - grep rI "password" . (ignore binary files)
 - grep -v "comment" file.txt (invert match)
@@ -156,7 +156,7 @@
 
 ```md
 ### xxd
-
+- creates hexadecimal dump
 - seeing raw bytes
 - [ xxd filename ] (in hexadecimal)
 - [ xxd -r file ] (reverses)
@@ -272,11 +272,16 @@
 - -l (listening)
 - -n (don't resolve names,show numeric ports)
 - -p (Show process name and PID using the socket (requires sudo or root privileges).)
+-----------------------------------
 - [ sudo ss -tulnp ], [ netstat -tulnp ]
 - [ ss -ta ], [ netstat -ta ] (View all active established network connections)
 - [ ss -an ], [ netstat -an ] (Display all open sockets and connections)
 - [ sudo ss -tulnp | grep -E "LISTEN|ESTAB" ] ( pipe only LISTEN or/and ESTAB)
 - [ curl http://127.0.0.1:number ]
+------------------------------------
+- [ ss -tuln | grep :31000 ] (if listening, will return output else no output)
+- [ ss -tuln 'sport = :80' ]
+- [ sudo ss -tulnp '( sport >= :30000 and sport <= :40000 )' ] (need space between everything)
 ```
 
 ```md
@@ -322,6 +327,35 @@
 - netcat
 - simple tool for making TCP connections and sending/receiving raw data
 - [ nc bandit.labs.overthewire.org 2220 ]
+```
+
+```md
+### openssl
+- ( a free, open-source software library that provides robust cryptographic functions and secures internet communications using SSL and TLS protocols )
+- [ openssl <subcommand> [flags] [arguments] ]
+- [ openssl version -a ]
+------------------------------
+- [ openssl dgst -sha256 file.txt ] ( Generate a SHA-256 hash )
+- [ openssl enc -aes-256-cbc -pbkdf2 -salt -in secret.txt -out secret.enc ] ( Encrypt a file with AES-256-CBC )
+- [ openssl enc -aes-256-cbc -pbkdf2 -d -in secret.enc -out secret.txt ] ( decrypt a file)
+------------------------------
+- (openssl s_client is a command-line tool built into OpenSSL that acts as a generic SSL/TLS client.)
+(It connects to network services secured by SSL/TLS (like HTTPS, SMTPS, IMAPS) and executes the initial TLS handshake, allowing you to inspect, test, and debug the connection at the transport level before any application data is sent)
+- [ openssl s_client -connect host:port ]
+- [ openssl s_client -connect google.com:443 ]
+```
+
+```md
+### TLS
+- (transport layer security)
+-----------------------------------------------
+- The Three Core Security Goals of TLS
+- 1. Encryption (Confidentiality): Protects data from eavesdroppers (Man-in-the-Middle attacks).
+
+- 2. Authentication (Identity): Uses digital X.509 certificates to verify that the server (and optionally the client) is who it claims to be.
+
+- 3. Integrity: Uses Message Authentication Codes (MAC / HMAC) to ensure data hasn't been altered or tampered with in transit.
+-------------------------------------------------
 ```
 
 ```md
