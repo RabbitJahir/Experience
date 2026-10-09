@@ -325,9 +325,71 @@ level-24-25
 
 ```md
 level-25-26
-- 
+- copy bandit26.sshkey to local, and try ssh -i
+- [ cat /etc/passwd | grep bandit26 ]
+- make the terminall smaller and try ssh -i, so that more pauses, before exit 0 comes
+- man more
+- v 
+- :set shell, :set shell=/bin/bash, :shell
+- exit 0 kicks us out
+- [ jHdv2ELQhT22BkprMNDjybZDAkw1zeBJ ]
 ```
 
+```md
+level-26-27
+- ./bandit27-do
+- ./bandit27-do whoami
+- ./bandit27-do cat /etc/bandit_pass/bandit27
+-[ STJLJBRRphMxKB392CT4iOr5CbzPU9ER ]
+```
+
+```md
+level-27-28
+- [ git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo ]
+- [ y8Yd2ssKcpHpud7UvOSOxwamRMzIGIeQ ]
+```
+
+```md
+level-28-29
+- [ ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo ]
+- [ git log -p]
+- [ Em7eGtqaMySwNFjCpwzzHhLhospOcdt0 ]
+```
+
+```md
+level-29-30
+- [ git branch -a ]
+- [ git log ]
+- [ git log --all ]
+- [ git log --all --oneline ]
+- [ git show origin/dev ] [ git show /origin/dev:README.md ]
+- [ jq9Dfg2rXsfYsWMgFuKlXhphjdH7USgX ]
+```
+
+```md
+level-30-31
+- [ git tag ]
+- [ git show tag ]
+- [ git show-ref --tags ]
+- [ 82NkymblpGBYmIXG6ZQ8YldBYstHpfUf ]
+```
+
+```md
+level-31-32
+- git ls-files
+- normally make and push
+- git log, not working, why? cat .gitignore, force push
+- git add -f -m "something", git push
+- [ pWuj5jBQ6IgV0NXwiH6g1pXRF8S1YvbT ]
+```
+
+```md
+level-32-33
+- $0
+- whoami
+- cat /etc/bandit_pass/bandit33
+- [ u4P2CyPOwPGLe94RdD9Uo2FxFwvnFswM ]
+```
 
 
 
