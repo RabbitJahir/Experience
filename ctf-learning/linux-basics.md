@@ -237,7 +237,7 @@
 - [ mkdir location ]
 ```
 
-````md
+```md
 ### ps
 
 - process status
@@ -259,8 +259,9 @@
 | RSS        | Resident Set Size | Physical RAM used by the process (in KB).           |
 | STAT       | Process State     | State code (R = Running, S = Sleeping, Z = Zombie). |
 | COMMAND    | Command           | The program name or exact command used to start it. |
+```
 
----
+
 
 ```md
 ### ss
@@ -291,6 +292,7 @@
 - [ ip a ], [ ip addr ] (show all ip addresses)
 - [ ip route ], [ ip r ] (routing table )
 - [ sudo ip link set eth0 up], [ sudo ip link set eth0 down ] (Enable or disable an interface)
+
 --------------------------------------------------------------------------------------------
 | Old Command (net-tools) | Modern Equivalent (iproute2) | Purpose                         |
 | ----------------------- | ---------------------------- | ------------------------------- |
@@ -299,6 +301,7 @@
 | ifconfig eth0 down      | ip link set eth0 down        | Bring interface DOWN            |
 | route -n                | ip r                         | Show routing table              |
 | arp -a                  | ip neigh                     | Show ARP cache (neighbor table) |
+
 --------------------------------------------------------------------------------------------
 ```
 
@@ -327,6 +330,18 @@
 - netcat
 - simple tool for making TCP connections and sending/receiving raw data
 - [ nc bandit.labs.overthewire.org 2220 ]
+- -l(listen), -v(verbose), -p(port)
+```
+
+```md
+### netstat
+- network statistics utility
+- [ netstat -tulnp ] 
+- t ( tcp sockets )
+- u ( udp sockets )
+- l (listening only )
+- n ( numeric address / ports )
+- p ( process name / PID )
 ```
 
 ```md
@@ -394,7 +409,18 @@
 - /dev/null  discard it
 ```
 
+```md
+### shebang
+- [ #!/bin/bash ]
+- use this to linux know that anything containing this should be run as bash command
 ```
+
+```md
+### next line in terminal
+- ctrl+v ctrl+j
+```
+
+```md
 > > <
 > > &&
 ```

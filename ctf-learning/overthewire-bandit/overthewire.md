@@ -238,19 +238,96 @@ level-16-17
 --
 
 - now, very important, ssh keys have this [ -----BEGIN OPENSSH PRIVATE KEY----- -----END OPENSSH PRIVATE KEY-----]
-- make sure your password file dont have this, and try [ file password.txt ]
-- then add the begin and end to the file, save it and try [ file password.txt ]
+- make sure your password file dont have this, and try [ file bandit17key.txt ]
+- then add the begin and end to the file, save it and try [ file bandit17key.txt ]
 
 -----------------------------------------
 --
 
-- [ ssh -p 2220 -i ban17key.txt bandit17@bandit.labs.overthewire.org ]
+- [ ssh -p 2220 -i bandit17key.txt bandit17@bandit.labs.overthewire.org ]
 - [ KEYUPDATE ]
 ```
 
 ```md
 level-17-18
+- [ diff passwords.old passwords.new ]
+- [ OQxXZjELndr90zuhOTDYBEomI0SZITXI ]
 ```
+
+```md
+level-18-19
+- [ ssh -p 2220 bandit18@bandit.labs.overthewire.org ' cat ~/readme' > ban18.txt ]
+- [ KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI ]
+```
+
+```md
+level-19-20
+- setuid (a special file permission in Linux that allows a user to execute an executable file with the privileges of the file's owner rather than their own. Only the owner can create or set a suid. others can only use it)
+- [ -rwsr-xr-x ] ( the s means suid)
+- [ ls -la ] ( find the file with suid )
+- [ -rwsr-x---   1 bandit20 bandit19 14880 Sep 26 21:53 bandit20-do ] (owner is bandit20)
+- [ file bandit20-do ]
+
+-----------------------------------------
+--
+
+- [ ./bandit20-do ] [ ./bandit20-do whoami]
+- cant execute it
+- [ cd /etc/bandit_pass ] (cant open files, permission denied )
+- what if the bandit20 execute command opens the bandit20 pass?
+- [ ./bandit20-do cat /etc/bandit_pass/bandit20 ] 
+- [ 4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA ]
+```
+
+```md
+level20-21
+- [ ./suconnect ]
+- [ ./suconnect 2220 ]
+- it makes a connection to localhost on the port you specify as a commandline argument [ nc -l 12345 ] then reads a line of text from the connection and compares it to the password in the previous level [ ./suconnect 12345 ] connection done, send password
+- [ bW9kBv5WC3P4yoDyf12LSdGuNz5ka6hY ]
+```
+
+```md
+level-21-22
+- [ cd /etc/cron.d ]
+- [ ls -l ] find file related to bandit22
+- [ we are the group, so we cant read the x file]
+- [ * * * * * ] ( minute, hour, day of month, month, day of week ) ( runnning always)
+- [ RYVux2rHEm9tiXHmLFzuR7Vhx6AZQMEz ]
+```
+
+```md
+level-22-23
+- cd there, find the sh and see what it says, if permission failed, try using cat
+- [ gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw ]
+```
+
+```md
+level-23-24
+- [ cronjob_bandit24.sh ]
+- [ #!/bin/bash
+    cat /etc/bandit_pass/bandit24 > /tmp/rabbit/pass24.txt ]
+- [ cp file.sh /var/spool/bandit24/foo ]
+- [ hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv ]
+```
+
+```md
+level-24-25
+- [ nc localhost 30002 ]
+- [ for pin in {0000..9999}; do
+    echo "$pin"
+    done ]
+- [  for pin in {0000..0004}; do echo "hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv $pin"; done; ]
+- [ for pin in {0000..9999}; do echo "$password $pin"; done | nc localhost 30002 ]
+- does the left first till buffer is loaded , then puts those output as inputs from right
+- [ SoHfqMOEqIX2IYKVciZxvgpR9a2Djx4P ]
+```
+
+```md
+level-25-26
+- 
+```
+
 
 
 
