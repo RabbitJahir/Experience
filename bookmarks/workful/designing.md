@@ -18,3 +18,6 @@
 
 ### cook with what you have
 > https://www.supercook.com/#/desktop
+
+### editor
+> https://www2.lunapic.com/editor/

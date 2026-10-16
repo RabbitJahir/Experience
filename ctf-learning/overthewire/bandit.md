@@ -26,14 +26,12 @@ level-0-1
 - [ cd ~ ] ( go to home directory)
 - [ cat readme ]
 - [ cat readme | grep "password" ]
-- [ 6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR ]
 ```
 
 ```md
 level-1-2
 - [ - ] ( has special meanings in linux )
 - [ cat ./- ]
-- [ PK8fYLZg2hnHSz83plBL1iEPKdD3QToB ]
 ```
 
 ```md
@@ -52,7 +50,6 @@ level-2-3
 
 - [ cat "./--spaces in this filename--" ]
 - [ cat ./--spaces\ in\ this\ filename-- ]
-- [ 7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME ]
 ```
 
 ```md
@@ -60,7 +57,6 @@ level-3-4
 - [ cd inhere ]
 - [ ls -a ]
 - [ cat ...Hiding-From-You]
-- [ xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq ]
 ```
 
 ```md
@@ -68,7 +64,6 @@ level-4-5
 - [ cd inhere ]
 - use [ cat ./-file00 ] on everyfile
 - [ file ./* ] (see the types of file)
-- [ 6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG ]
 ```
 
 ```md
@@ -77,22 +72,19 @@ level-5-6
 - [ file file ] (type of file)
 - [ ls -l file ] (see permissions and if its executable or not)
 - [ ls -a ] (filename structure matters, - this . are not same )
-- [ pXa26xhMWaC2SvDotA4r9EgZkulOeSBW ]
 ```
 
 ```md
 level-6-7
 - [ cd / ] (in root system)
 - [ find / -type f -user bandit7 -group bandit6 -size 33c ]
-- [ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null ] (2>/dev/null removes the permissio denied files)
-- [ Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3 ] 
+- [ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null ] (2>/dev/null removes the permission denied files)
 ```
 
 ```md
 level-7-8
 - [ cat file.txt ]
 - [ cat data.txt | grep "millionth" ]
-- [ VR1ljMayciFxbnUokuQmJFw6QC9VKtub ]
 ```
 
 ```md
@@ -100,14 +92,12 @@ level-8-9
 - [ sort data.txt ]
 - [ sort data.txt | uniq -c ] (count and show)
 - [ sort data.txt | uniq -u ] (show only unique)
-- [ EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl ]
 ```
 
 ```md
 level-9-10
 - [ cat data.txt | grep "=" ] (cat prints everything) (show raw content)
 - [ strings data.txt | grep "=" ] (string prints human-readable texts ) (extract human-readable)
-- [ B0s2khmbT9u0geKuOoVGW3JZKhndE3BG ]
 ```
 
 ```md
@@ -115,7 +105,6 @@ level-10-11
 - [ cat data.txt ]
 - [ base64 -decode data.txt ], [ base64 -d data.txt ]
 - [ cat data.txt | base64 -d ]
-- [ pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro ]
 ```
 
 ```md
@@ -132,7 +121,6 @@ level-11-12
 
 - [ Original:  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 ROT13:     N O P Q R S T U V W X Y Z A B C D E F G H I J K L M ]
-- [ GROozWPO8QyN0mGrjUkID0WCYkZiQxrN ]
 ```
 
 ```md

@@ -108,7 +108,7 @@
 - grep -n "password" file.txt (show line numbers )
 - grep -E "password|passwd|secret|token|key" config.txt (-E multiple patterns)
 - grep -i "password|passwd|secret|token|key" config.txt (case-insensitive )
-- grep r "password". (recursive)
+- grep r "password" . (recursive) ( doing the same operation in this and all of its subdirectories)
 - grep rI "password" . (ignore binary files)
 - grep -v "comment" file.txt (invert match)
 ```
