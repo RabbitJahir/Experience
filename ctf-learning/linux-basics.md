@@ -261,7 +261,24 @@
 | COMMAND    | Command           | The program name or exact command used to start it. |
 ```
 
+```md
+### ln
+1. hard links
+2. symbolic links (soft links)
 
+---
+
+- [ ln -s TARGET LINK_NAME ]
+
+---
+
+-s	Create a symbolic link
+-f	Force removal of an existing destination before creating the link
+-v	Display what the command is doing
+-n	Treat an existing symbolic link to a directory as a normal file in certain operations
+
+---
+```
 
 ```md
 ### ss
@@ -452,4 +469,9 @@ $$	- Process ID of the current shell
 
 bash -c 'echo "Shell name: $0"; echo "First argument: $1"' demo hello
 
+```
+
+```md
+### id
+- [ id ]
 ```
