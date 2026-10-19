@@ -49,3 +49,12 @@ level-4-5
 - ln -s file.log
 - [ JRGj9iWNOb ]
 ```
+
+```md
+level-5-6
+- gdb name
+- disassemble main
+- look through it, movl, cmp, cmp compares, movl moves something
+- [ printf '%d\n' 0x1bd3 ], print the movl 
+- [ 3zrlkaPTfH ]
+```

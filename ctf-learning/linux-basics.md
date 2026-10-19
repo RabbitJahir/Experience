@@ -455,14 +455,16 @@
 
 ```md
 ### special shell parameters
-Parameter	Meaning
-$0	- Name used to invoke the shell or script
-$1	- First positional argument
-$2	- Second positional argument
-$#	- Number of positional arguments
-$@	- All positional arguments, individually preserved
-$?	- Exit status of the previous command
-$$	- Process ID of the current shell
+
+| Parameter | Meaning |
+| --- | --- |
+| $0 | Name used to invoke the shell or script |
+| $1 | First positional argument |
+| $2 | Second positional argument |
+| $# | Number of positional arguments |
+| $@ | All positional arguments, individually preserved |
+| $? | Exit status of the previous command |
+| $$ | Process ID of the current shell |
 
 -----------------------------------------
 --
@@ -474,4 +476,120 @@ bash -c 'echo "Shell name: $0"; echo "First argument: $1"' demo hello
 ```md
 ### id
 - [ id ]
+```
+
+```md
+### gdb
+- [ 0x080491da <+20>: movl $0x1bd3,-0xc(%ebp) ]
+
+| Column | Value | Description |
+| --- | --- | --- |
+| 1 | 0x080491da | The memory address of the instruction. |
+| 2 | <+20> | The offset from the start of the function. This instruction is 20 bytes into `main`. |
+| 3 | movl | The mnemonic for the instruction. It moves a 32-bit value. |
+| 4 | $0x1bd3,-0xc(%ebp) | The operands. The constant `0x1bd3` is written into the stack slot at `EBP-12`. |
+
+---
+
+#### 1. Function setup and stack initialization
+
+| Address / Offset | Instruction | Meaning |
+| --- | --- | --- |
+| 0x080491c6 <+0> | lea 0x4(%esp),%ecx | Calculates `ESP + 4` and stores it in `ECX`. |
+| 0x080491ca <+4> | and $0xfffffff0,%esp | Aligns `ESP` to a 16-byte boundary by clearing the lower bits. |
+| 0x080491cd <+7> | push -0x4(%ecx) | Pushes the 32-bit value stored at `ECX - 4` onto the stack. |
+| 0x080491d0 <+10> | push %ebp | Saves the caller's frame pointer. |
+| 0x080491d1 <+11> | mov %esp,%ebp | Sets up the current function's stack frame. |
+| 0x080491d3 <+13> | push %ebx | Saves the value of `EBX` because the function may modify it. |
+| 0x080491d4 <+14> | push %ecx | Saves `ECX` on the stack. |
+| 0x080491d5 <+15> | sub $0x10,%esp | Reserves 16 bytes of stack space for local variables and temporary data. |
+| 0x080491d8 <+18> | mov %ecx,%eax | Copies `ECX` into `EAX`. |
+
+Key concepts:
+- `ESP` — stack pointer, pointing to the current top of the stack.
+- `EBP` — frame pointer, commonly used to access function arguments and local variables.
+- `EAX`, `EBX`, `ECX` — 32-bit general-purpose CPU registers.
+- `push` — decreases `ESP` by 4 bytes (in 32-bit mode) and stores a value on the stack.
+- `lea` — calculates an effective address without loading the value from memory.
+
+
+#### 2. Initializing and checking the input
+
+| Address / Offset | Instruction | Meaning |
+| --- | --- | --- |
+| 0x080491da <+20> | movl $0x1bd3,-0xc(%ebp) | Stores the constant `0x1bd3` at the local stack slot `EBP-12`. |
+| 0x080491e1 <+27> | cmpl $0x2,(%eax) | Compares `2` to the value stored at the address pointed to by `EAX`. |
+| 0x080491e4 <+30> | je 0x8049206 <main+64> | Jumps to `main+64` if the comparison is equal. |
+| 0x080491e6 <+32> | mov 0x4(%eax),%eax | Loads the pointer to the first argument after the program name. |
+| 0x080491e9 <+35> | mov (%eax),%eax | Loads the string pointer stored at that address. |
+| 0x080491eb <+37> | sub $0x8,%esp | Reserves 8 bytes for the upcoming `printf` call arguments. |
+| 0x080491ee <+40> | push %eax | Pushes the argument string onto the stack. |
+| 0x080491ef <+41> | push $0x804a008 | Pushes the address of a format string, likely used by `printf`. |
+| 0x080491f4 <+46> | call 0x8049040 <printf@plt> | Calls `printf` through the PLT. |
+| 0x080491f9 <+51> | add $0x10,%esp | Restores the stack pointer after the `printf` call. |
+| 0x080491fc <+54> | sub $0xc,%esp | Reserves 12 bytes for the final `exit` call. |
+| 0x080491ff <+57> | push $0xffffffff | Pushes `0xffffffff`, which is `-1` in 32-bit two's-complement form. |
+| 0x08049201 <+59> | call 0x8049080 <exit@plt> | Calls `exit(-1)` and terminates the program. |
+
+
+#### 3. Reading and converting your four-digit code
+
+| Address / Offset | Instruction | Meaning |
+| --- | --- | --- |
+| 0x08049206 <+64> | mov 0x4(%eax),%eax | Loads the value at `EAX + 4` into `EAX`. |
+| 0x08049209 <+67> | add $0x4,%eax | Advances the pointer by 4 bytes to the next argument. |
+| 0x0804920c <+70> | mov (%eax),%eax | Loads the string pointer stored at that address. |
+| 0x0804920e <+72> | sub $0xc,%esp | Reserves 12 bytes for the `atoi` call. |
+| 0x08049211 <+75> | push %eax | Pushes the command-line argument onto the stack. |
+| 0x08049212 <+76> | call 0x80490a0 <atoi@plt> | Calls `atoi` to convert the numeric string into an integer. |
+| 0x08049217 <+81> | add $0x10,%esp | Cleans up the stack after the call. |
+| 0x0804921a <+84> | cmp %eax,-0xc(%ebp) | Compares the result of `atoi` with the value stored at `EBP-12`. |
+| 0x0804921d <+87> | jne 0x804924a <main+132> | Jumps to `main+132` if the user input does not match the expected code. |
+The critical instructions are:
+
+| Instruction | Meaning |
+| --- | --- |
+| `movl $0x1bd3,-0xc(%ebp)` | Stores the expected value `0x1bd3` in a local variable. |
+| `call 0x80490a0 <atoi@plt>` | Converts the user-supplied string into an integer. |
+| `cmp %eax,-0xc(%ebp)` | Compares the converted input against the expected value. |
+| `jne 0x804924a <main+132>` | Jumps away if the comparison fails. |
+
+- The first instruction stores the expected value, `0x1bd3`, in a local variable. The `atoi` call converts your input to an integer, and `cmp` checks whether it matches that variable.
+
+The hexadecimal value `0x1bd3` equals decimal `7123`.
+
+#### 4. What happens when the code is correct?
+
+| Address / Offset | Instruction | Meaning |
+| --- | --- | --- |
+| 0x0804921f <+89> | call 0x8049050 <geteuid@plt> | Retrieves the effective user ID of the process. |
+| 0x08049224 <+94> | mov %eax,%ebx | Saves the returned effective user ID in `EBX`. |
+| 0x08049226 <+96> | call 0x8049050 <geteuid@plt> | Retrieves the effective user ID again. |
+| 0x0804922b <+101> | sub $0x8,%esp | Reserves 8 bytes for function arguments. |
+| 0x0804922e <+104> | push %ebx | Pushes the saved effective user ID. |
+| 0x0804922f <+105> | push %eax | Pushes the newly retrieved effective user ID. |
+| 0x08049230 <+106> | call 0x8049090 <setreuid@plt> | Calls `setreuid` with the two IDs. |
+| 0x08049235 <+111> | add $0x10,%esp | Reclaims 16 bytes of stack space. |
+
+- The `setreuid` call is relevant because this is a setuid executable. It attempts to set the real and effective user IDs to the supplied values. The precise privilege behavior depends on the executable's ownership and permissions.
+
+#### 5. Assembly vocabulary cheat sheet
+
+| Term | Definition | Example |
+| --- | --- | --- |
+| Instruction address | Memory address where an instruction resides | `0x080491da` |
+| Function offset | Byte offset from the function's beginning | `<+20>` |
+| Mnemonic | Name of the operation | `movl`, `cmp`, `jne` |
+| Operand | Register, constant, or memory reference used by an instruction | `$0x1bd3` |
+| Immediate operand | Literal constant encoded in the instruction | `$0x1bd3` |
+| Register operand | A CPU register used by the instruction | `%eax` |
+| Memory operand | A memory location accessed by the instruction | `-0xc(%ebp)` |
+| Conditional jump | A jump that depends on CPU flags | `je`, `jne` |
+| PLT | Procedure Linkage Table, used to call dynamically linked functions | `printf@plt` |
+| Stack frame | Memory area associated with a function call | Variables accessed using `%ebp` |
+| Hexadecimal | Base-16 number representation | `0x1bd3` |
+| Disassembly | Human-readable representation of machine-code instructions | The listing above |
+
+- The most important pattern for CTF reverse engineering: find a `cmp` instruction, identify the values being compared, trace where those values originate, and then inspect the conditional jump that determines the program's next action.
+
 ```
