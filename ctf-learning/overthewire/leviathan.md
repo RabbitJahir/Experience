@@ -58,3 +58,7 @@ level-5-6
 - [ printf '%d\n' 0x1bd3 ], print the movl 
 - [ 3zrlkaPTfH ]
 ```
+
+```md
+level-6-7
+```
