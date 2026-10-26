@@ -13,3 +13,9 @@
 
 ### well
 > https://aiengineeringfromscratch.com/
+
+### download websites
+> https://www.httrack.com/page/1/en/index.html
+
+### alternate of xampp
+> https://dbeaver.io/
