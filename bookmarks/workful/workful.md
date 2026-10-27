@@ -19,3 +19,6 @@
 
 ### alternate of xampp
 > https://dbeaver.io/
+
+### edit, draw shapes, underline, mark in pdfs easily
+> https://www.pdfgear.com/
