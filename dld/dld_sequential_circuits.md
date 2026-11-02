@@ -180,3 +180,12 @@
 
 **-----------------------------------------------------------------------------------------------**
 
+# Going from state diagram -> state table -> equations, K-map
+
+> - Make K map for A+ and B+
+> - When A/B = 0, We find JA / JB and KA/KB
+> - When A = 0, all columns with 0 becomes non-relevant, and vice versa when A = 1, columns with 1 non relevant. Same with B
+
+**-----------------------------------------------------------------------------------------------**
+
+# 

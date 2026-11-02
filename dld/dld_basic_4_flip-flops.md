@@ -1,4 +1,4 @@
-
+### IMPORTANT
 > ```md
 > # Four Basic types flip-flops
 > ```
@@ -6,6 +6,13 @@
 > 2. JK Flip-Flop — Set, Reset, and Toggle
 > 3. D Flip-Flop — Data or Delay
 > 4. T Flip-Flop — Toggle
+
+> ```md
+> # Types of table 
+> ```
+> 1. Operation / Criteria Table (Rules for each flip-flop)
+> 2. Characteristic Table (Full Version)
+> 3. Excitation Table (X Version)
 
 **-----------------------------------------------------------------------------------------------**
 
@@ -47,7 +54,7 @@
 > ```md
 > ### SR flip-flop Excitation Table
 >```
-> | Present state (Q) | Desired next state (Q+) | Required J | Required K |
+> | Present state (Q) |  Next state (Q+) | Required J | Required K |
 > |:---:|:---:|:---:|:---:|
 > | 0 | 0 | 0 | X |
 > | 0 | 1 | 1 | 0 |
@@ -102,7 +109,7 @@
 > ```md
 > ### JK flip-flop excitation table
 > ```
-> | Present state (Q) | Desired next state (Q+) | Required J | Required K |
+> | Present state (Q) |  Next state (Q+) | Required J | Required K |
 > |:---:|:---:|:---:|:---:|
 > | 0 | 0 | 0 | X |
 > | 0 | 1 | 1 | X |
@@ -160,7 +167,7 @@
 > ```md
 > ### D flip-flop Excitation Table
 > ```
-> | Present state (Q) | Desired next state (Q+) | Required D |
+> | Present state (Q) |  Next state (Q+) | Required D |
 > |:---:|:---:|:---:|
 > | 0 | 0 | 0 |
 > | 0 | 1 | 1 |
@@ -214,7 +221,7 @@
 > ```md
 > ### T flip-flop Excitation Table
 > ```
-> | Present state (Q) | Desired next state (Q+) | Required T |
+> | Present state (Q) | Next state (Q+) | Required T |
 > |:---:|:---:|:---:|
 > | 0 | 0 | 0 |
 > | 0 | 1 | 1 |
