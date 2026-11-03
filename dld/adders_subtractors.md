@@ -52,40 +52,40 @@ $C = XY + (X \oplus Y) \cdot Z$
 >```md
 > ## Design Procedure of Full Adder
 >```
-
-> - Half adders add only upto 2 bits. To add two binary numbers, we need to add 3 bits, including the carry.    
-> - Z = Carry in, C = Carry out
-
-#### **Kmap for S**
-| | y'z'(00) |y'z(01) |yz(11) |yz'(10) |
-|:-: |:-:|:-:|:-:|:-:|
-x'(0) | |1| | 1|
-x(1)  |1| |1|  | 
-
-#### Boolean Expression :
-
-$$
-C = XZ + YZ + XY \\
-= XY + (X+Y)Z \\
-= XY + ((X \oplus Y) + XY)Z \\
-= XY + (X \oplus Y)Z + XYZ \\
-= XY + (X \oplus Y)Z
-$$
-
-#### **Kmap for C**
-| | y'z'(00) |y'z(01) |yz(11) |yz'(10) |
-| :-: |:-:|:-:|:-:|:-:|
-|x'(0) | | |1| |
-|x(1)  | |1|1|1| 
-
-#### Boolean Expression :
-$$
-C = XZ + YZ + XY \\
-= XY + (X+Y)Z  \\
-= XY + ((X \oplus Y) + XY)Z \\
-= XY + (X \oplus Y)Z + XYZ \\
-= XY + (X \oplus Y)Z 
-$$
+> 
+> > - Half adders add only upto 2 bits. To add two binary numbers, we need to add 3 bits, including the carry.    
+> > - Z = Carry in, C = Carry out
+> 
+> #### **Kmap for S**
+> | | y'z'(00) |y'z(01) |yz(11) |yz'(10) |
+> |:-: |:-:|:-:|:-:|:-:|
+> x'(0) | |1| | 1|
+> x(1)  |1| |1|  | 
+> 
+> #### Boolean Expression :
+> 
+> $$
+> C = XZ + YZ + XY \\
+> = XY + (X+Y)Z \\
+> = XY + ((X \oplus Y) + XY)Z \\
+> = XY + (X \oplus Y)Z + XYZ \\
+> = XY + (X \oplus Y)Z
+> $$
+> 
+> #### **Kmap for C**
+> | | y'z'(00) |y'z(01) |yz(11) |yz'(10) |
+> | :-: |:-:|:-:|:-:|:-:|
+> |x'(0) | | |1| |
+> |x(1)  | |1|1|1| 
+> 
+> #### Boolean Expression :
+> $$
+> C = XZ + YZ + XY \\
+> = XY + (X+Y)Z  \\
+> = XY + ((X \oplus Y) + XY)Z \\
+> = XY + (X \oplus Y)Z + XYZ \\
+> = XY + (X \oplus Y)Z 
+> $$
 
 <img src="pics/breaker.png" width=100% height=200px>
 
