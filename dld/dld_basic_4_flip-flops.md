@@ -228,19 +228,15 @@
 >
 <hr style="height: 4px; background-color: yellow; border: none;">
 
-> ```md
-> ### T Operation / Criteria Table
-> ```
+### T Operation / Criteria Table
 
  |  T  | Operation                                |
  | :-: | ---------------------------------------- |
  |  0  | Hold/ no change — keep the current state |
  |  1  | Toggle — change to the opposite state    |
 
-> ```md
-> ### T flip-flop Characteristic / Truth Table
-> ```
->
+### T flip-flop Characteristic / Truth Table
+
 > - Match T input with the T operation table.
 
  | Q(t) |  T  |    Q(t+1)     | explanation                                                 |
@@ -250,9 +246,7 @@
  |  1   |  0  | 1 (no change) | Current state is on, Hold operation, so no change           |
  |  1   |  1  | 0 (opposite)  | Current state is on, Toggle operation, so output becomes 0  |
 
-> ```md
-> ### T flip-flop Excitation Table
-> ```
+### T flip-flop Excitation Table
 | Present state (Q) | Next state (Q+) | Required T |
 | :---------------: | :-------------: | :--------: |
 |         0         |        0        |     0      |
