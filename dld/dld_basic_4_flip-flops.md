@@ -35,7 +35,8 @@
 > - 0 = OFF
 > - 1 = ON
 
-<img src="https://placehold.co/1200x4/FFFF00/FFFF00.png" width="100%" height="4" alt="Yellow divider">
+<img src="pics/breaker.png" width=100% height=200px>
+
 
 # SR Flip-Flop
 
@@ -95,7 +96,8 @@
 > ![SR_flip-flop_diagram](pics/sr_flip-flop.png)
 
 
-<img src="https://placehold.co/1200x4/FFFF00/FFFF00.png" width="100%" height="4" alt="Yellow divider">
+<img src="pics/breaker.png" width=100% height=200px>
+
 
 # JK
 
@@ -215,7 +217,7 @@
 > ![D flip-flop diagram](pics/d_flip-flop.png)
 >
 
-<img src="pics/breaker.png" width=100% height=100px>
+<img src="pics/breaker.png" width=100% height=200px>
 
 
 # T Flip-Flop
