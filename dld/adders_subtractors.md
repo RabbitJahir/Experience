@@ -1,12 +1,11 @@
 >```md
 ># Half adder
 >```
+> ### Circuit Diagram
 > ![half_adder_circuit_diagram](pics/half_adder_circuit_diagram.png)
 >
-> #### **FIGURE: Half adder Circuit Diagram** 
->
 > ---
-> #### **Truth Table**
+> ### Truth Table
 > | X | Y | S| C|
 > |:-:|:-:|:-:|:-:|
 > |0|0|0|0|
@@ -16,31 +15,30 @@
 >
 >---  
 >  
+> ### Logical Diagram
 >![half_adder_logical_diagram](pics/half_adder_logical_diagram.png)
 >
-> #### **Figure: Half adder Logical Diagram**
+> #### Boolean Expression
+> $S = XY' + X'Y$
+> $S = X \oplus Y$
+> 
+> $C = XY $
 >
-> **S** = x.y' + x' . y  
-> **S**  = x $\oplus$ y
->
-> **C** = x.y 
->
->---
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
-**-----------------------------------------------------------------------------------------------**
 
 
 >```md
 ># Full adder
 >```
+> ### Circuit Diagram
 >![full_adder_circuit_diagram](pics/full_adder_circuit_diagram.png)
 >
-> #### **Figure: Full adder Circuit diagram**
 >
 >---
 >
-> #### **Truth Table**
-> | X | Y | Cᵢₙ | S | Cₒᵤₜ |
+> ### Truth Table
+> | X | Y | Z/ Cᵢₙ | S | Cₒᵤₜ |
 > |:-:|:-:|:-:|:-:|:-:|
 > | 0 | 0 | 0 | 0 | 0 |
 > | 0 | 0 | 1 | 1 | 0 |
@@ -53,16 +51,18 @@
 >
 >---
 >
+> ### Logical Diagram
 >![full_adder_logical_diagram](pics/full_adder_logical_diagram.png)
 >
-> #### **Figure Full adder logical diagram**
->
-> **S** = (X $\oplus$ Y) $\oplus$ Z  
-> **C** = X.Y + (X $\oplus$ Y).Z
+> #### Boolean Expression
+> $S = (X \oplus Y) \oplus Z$
+> 
+> $C = XY + (X \oplus Y) \cdot Z$
 >
 > ---
->
-> ## **Design Procedure**
+>```md
+> ## Design Procedure of Full Adder
+>```
 >
 > - Half adders add only upto 2 bits. To add two binary numbers, we need to add 3 bits, including the carry.    
 >
@@ -75,10 +75,15 @@
 >x'(0) | |1| | 1|
 >x(1)  |1| |1|  | 
 >
-> **S** = xy'z' + x'y'z + xyz + x'yz'  
->  = x (y'z' + yz) + x ' (y'z + yz')  
->  = x (y $\oplus$ z) + x ' (y $\oplus$ z)'   
->  = x $\oplus$ (y $\oplus$ z)
+> #### Boolean Expression :
+>
+> $$
+> C = XZ + YZ + XY \\
+> = XY + (X+Y)Z \\
+> = XY + ((X \oplus Y) + XY)Z \\
+> = XY + (X \oplus Y)Z + XYZ \\
+> = XY + (X \oplus Y)Z
+> $$
 >
 > ---
 > #### **Kmap for C**
@@ -87,24 +92,82 @@
 >x'(0) | | |1| |
 >x(1)  | |1|1|1| 
 >
-> **C** = xz + yz + xy   
->   = xy + (x+y)z  
->   = xy + ( (x $\oplus$ y) + xy )z  
->   = xy + (x $\oplus$ y)z + xyz  
->   = xy + (x $\oplus$ y)z 
+> #### Boolean Expression :
 >
-> ---
+> $$
+> C = XZ + YZ + XY \\
+> = XY + (X+Y)Z  \\
+> = XY + ((X \oplus Y) + XY)Z \\
+> = XY + (X \oplus Y)Z + XYZ \\
+> = XY + (X \oplus Y)Z 
+> $$
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
 
-**-----------------------------------------------------------------------------------------------**
+
+> ```md
+> # Half Subtractor
+> ```
+> ### Half Subtractor
+>![half_subtractor_circuit_diagram](pics/half_subtractor_circuit_diagram.png)
+>
+>---
+>
+> ### Truth Table
+> | A | B | Difference (D) | Borrow (Bo) |
+> |:-:|:-:|:-:|:-:|
+> | 0 | 0 | 0 | 0 |
+> | 0 | 1 | 1 | 1 |
+> | 1 | 0 | 1 | 0 |
+> | 1 | 1 | 0 | 0 |
+>
+>---
+>
+> ### Half Subtractor
+>![half_subtractor_logical_diagram](pics/half_subtractor_logical_diagram.png)
+>
+> #### Boolean Expression
+> $D = X \oplus Y$  
+> $B = X' \cdot Y$
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
 
-```md
-# Half Substractor
-```
+> ```md
+> # Full Subtractor
+> ```
+> ### Circuit Diagram
+>![full_subtractor_circuit_diagram](pics/full_subtractor_circuit_diagram.jpeg)
+>
+>
+>---
+>
+> ### Truth Table
+> | A | B | Bin | Difference (D) | Borrow-out (Bout) |
+> |:-:|:-:|:-:|:-:|:-:|
+> | 0 | 0 | 0 | 0 | 0 |
+> | 0 | 0 | 1 | 1 | 1 |
+> | 0 | 1 | 0 | 1 | 1 |
+> | 0 | 1 | 1 | 0 | 1 |
+> | 1 | 0 | 0 | 1 | 0 |
+> | 1 | 0 | 1 | 0 | 0 |
+> | 1 | 1 | 0 | 0 | 0 |
+> | 1 | 1 | 1 | 1 | 1 |
+>
+>---
+>
+> ### Logical Diagram
+>![full_subtractor_logical_diagram](pics/full_subtractor_logical_diagram.png) 
+>
+> #### Boolean Expression
+> $D = A \oplus B \oplus Bin$  
+> $Bout = A'B + A'Bin + BBin$
+>
+>```md
+> # Design Precedure of Full Subtractor
+>```
+> 
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
-**-----------------------------------------------------------------------------------------------**
-
-```md
-# Full Substractor
-```

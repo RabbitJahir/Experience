@@ -1,11 +1,11 @@
-```md
-## Sequential circuit/logic
-```
+> ```md
+> ## Sequential circuit/logic
+> ```
 > - A digital logic circuit whose output depends on both the current inputs and previous outputs.  
 > - It can remember what happened before.  
 > - Uses memory element to remember, latch or flip-flop
-
-**-----------------------------------------------------------------------------------------------**
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
 
 > ```md
@@ -29,8 +29,10 @@
 > - Different circuits can have different next states and outputs for the same present state and input.
 > - 4 basic types of flip-flops: JK, SR, D and T
 > - Some circuits may or may not have y. It is just another output such as A and B, nothing else.
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
-**-----------------------------------------------------------------------------------------------**
+
 
 > ```md
 > ### Finding state table from equations using JK flip-flop
@@ -54,8 +56,9 @@
 > 
 > - used AND OR NOT
 > - **A+ = JA & KA, B+ = JB & KB**
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
-**-----------------------------------------------------------------------------------------------**
 
 > ```md
 > ### Finding state table from equations using SR flip-flop
@@ -80,8 +83,9 @@
 > 
 > - Used AND, OR, NOT
 > - **A+ = SA & RA, B+ = SB & RB**
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
-**-----------------------------------------------------------------------------------------------**
 
 > ```md
 > ### Finding state table from equations using D flip-flop
@@ -106,8 +110,9 @@
 > 
 > - Used AND, OR, NOT
 > - **A+ = DA, B+ = DB**
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
-**-----------------------------------------------------------------------------------------------**
 
 > ```md
 > ### Finding state table from equations using T flip-flop
@@ -132,8 +137,8 @@
 > 
 > - Used AND, OR, NOT
 > - **A+ = TA, B+ = TB**
-
-**-----------------------------------------------------------------------------------------------**
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
 
 > ```md
@@ -166,8 +171,9 @@
 > 
 > ![mealy diagram](pics/mealy_1.png)
 > 
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
-**-----------------------------------------------------------------------------------------------**
 
 >```md
 > ### Mealy and Moore state diagrams
@@ -177,15 +183,15 @@
 > > - **Moore machine:** The output depends only on the present state. The output is written inside or beside each state circle, and arrows are labeled with the input.
 >
 > **Shorcut** : Output, y contains x, then mealy. Output y contains A, B no x, then moore
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
-**-----------------------------------------------------------------------------------------------**
 
 # Going from state diagram -> state table -> equations, K-map
 
 > - Make K map for A+ and B+
 > - When A/B = 0, We find JA / JB and KA/KB
 > - When A = 0, all columns with 0 becomes non-relevant, and vice versa when A = 1, columns with 1 non relevant. Same with B
+>
+> <hr style="height: 4px; background-color: yellow; border: none;">
 
-**-----------------------------------------------------------------------------------------------**
-
-# 
