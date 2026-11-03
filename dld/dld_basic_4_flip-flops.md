@@ -8,17 +8,13 @@
 > 4. T Flip-Flop — Toggle
 >
 
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
-  <rect width="1200" height="4" fill="#FFFF00"/>
-</svg>
+<img src="https://placehold.co/1200x4/FFFF00/FFFF00.png" width="100%" height="4" alt="Yellow divider">
 
 > [!TIP]  
 > Flip-Flops are our operations  
 > States are the bulbs operation
 
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
-  <rect width="1200" height="4" fill="#FFFF00"/>
-</svg>
+<img src="https://placehold.co/1200x4/FFFF00/FFFF00.png" width="100%" height="4" alt="Yellow divider">
 
 > ```md
 > # Types of table
@@ -39,9 +35,7 @@
 > - 0 = OFF
 > - 1 = ON
 
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
-  <rect width="1200" height="4" fill="#FFFF00"/>
-</svg>
+<img src="https://placehold.co/1200x4/FFFF00/FFFF00.png" width="100%" height="4" alt="Yellow divider">
 
 # SR Flip-Flop
 
@@ -101,9 +95,7 @@
 > ![SR_flip-flop_diagram](pics/sr_flip-flop.png)
 
 
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
-  <rect width="1200" height="4" fill="#FFFF00"/>
-</svg>
+<img src="https://placehold.co/1200x4/FFFF00/FFFF00.png" width="100%" height="4" alt="Yellow divider">
 
 # JK
 
@@ -169,9 +161,7 @@
 > S=1,R=1, forbidden condition, outputs invalid  
 > J=1,K=1, produces toggle, output is opposite of input
 
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
-  <rect width="1200" height="4" fill="#FFFF00"/>
-</svg>
+<img src="pics/breaker.png" width=100% height=200px>
 
 # D Flip-Flop
 
@@ -225,9 +215,8 @@
 > ![D flip-flop diagram](pics/d_flip-flop.png)
 >
 
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
-  <rect width="1200" height="4" fill="#FFFF00"/>
-</svg>
+<img src="pics/breaker.png" width=100% height=100px>
+
 
 # T Flip-Flop
 
@@ -273,7 +262,4 @@
 >
 > ![T flip-flop diagram](pics/t_flip-flop.png)
 >
-
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
-  <rect width="1200" height="4" fill="#FFFF00"/>
-</svg>
+<img src="pics/breaker.png" width=100% height=200px>
