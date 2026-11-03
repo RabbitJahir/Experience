@@ -62,13 +62,13 @@ x(1)  |1| |1|  |
 
 #### Boolean Expression :
 
-$$
-C = XZ + YZ + XY\\\
-= XY + (X+Y)Z \\\
-= XY + ((X \oplus Y) + XY)Z \\\
-= XY + (X \oplus Y)Z + XYZ \\\
-= XY + (X \oplus Y)Z
-$$
+
+$C = XZ + YZ + XY$\
+$= XY + (X+Y)Z$\
+$= XY + ((X \oplus Y) + XY)Z$\
+$= XY + (X \oplus Y)Z + XYZ$ \
+$= XY + (X \oplus Y)Z$
+
 
 #### **Kmap for C**
 | | y'z'(00) |y'z(01) |yz(11) |yz'(10) |
@@ -77,13 +77,13 @@ $$
 |x(1)  | |1|1|1| 
 
 #### Boolean Expression :
-$$
-C = XZ + YZ + XY \\
-= XY + (X+Y)Z  \\
-= XY + ((X \oplus Y) + XY)Z \\
-= XY + (X \oplus Y)Z + XYZ \\
-= XY + (X \oplus Y)Z 
-$$
+
+$C = XZ + YZ + XY$ \
+$= XY + (X+Y)Z$  \
+$= XY + ((X \oplus Y) + XY)Z$ \
+$= XY + (X \oplus Y)Z + XYZ$ \
+$= XY + (X \oplus Y)Z $
+
 
 <img src="pics/breaker.png" width=100% height=200px>
 
