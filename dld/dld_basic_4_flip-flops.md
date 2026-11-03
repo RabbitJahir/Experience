@@ -7,12 +7,18 @@
 > 3. D Flip-Flop — Data or Delay
 > 4. T Flip-Flop — Toggle
 >
-<hr style="height: 4px; background-color: yellow; border: none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
+  <rect width="1200" height="4" fill="#FFFF00"/>
+</svg>
 
 > [!TIP]  
 > Flip-Flops are our operations  
 > States are the bulbs operation
-<hr style="height: 4px; background-color: yellow; border: none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
+  <rect width="1200" height="4" fill="#FFFF00"/>
+</svg>
 
 > ```md
 > # Types of table
@@ -21,7 +27,6 @@
 > 1. Operation / Criteria Table (Rules for each flip-flop)
 > 2. Characteristic Table (Full Version)
 > 3. Excitation Table (X Version)
-> <hr style="height: 4px; background-color: yellow; border: none;">
 
 > ```md
 > # Characteristic table
@@ -33,79 +38,77 @@
 > - Q(t+1) = after change, after the update
 > - 0 = OFF
 > - 1 = ON
-<hr style="height: 4px; background-color: yellow; border: none;">
 
-> ```md
-> ### SR Operation / Criteria Table
-> ```
->
-> | S | R | Operation |
-> |:---:|:---:|---|
-> | 0 | 0 | Hold/ no change — keep the current state |
-> | 0 | 1 | Reset — set output to 0 |
-> | 1 | 0 | Set — set output to 1 |
-> | 1 | 1 | Invalid — forbidden state |
->
-> ```md
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
+  <rect width="1200" height="4" fill="#FFFF00"/>
+</svg>
+
+# SR Flip-Flop
+
+### SR Operation / Criteria Table
+
+| S | R | Operation |
+|:---:|:---:|---|
+| 0 | 0 | Hold/ no change — keep the current state |
+| 0 | 1 | Reset — set output to 0 |
+| 1 | 0 | Set — set output to 1 |
+| 1 | 1 | Invalid — forbidden state |
+
 > ### SR flip-flop Characteristic / Truth Table
-> ```
->
+
 > - match SR opeations with SR operation table
->
-> | Q(t) |  S  |  R  |    Q(t+1)     | explanation                                                                         |
-> | :--: | :-: | :-: | :-----------: | ----------------------------------------------------------------------------------- |
-> |  0   |  0  |  0  | 0 (no change) | current state is off, did not turn on or off, so after change is same/ no change    |
-> |  0   |  0  |  1  |       0       | current state is off, reset the circuit to be off, ultimately it will be off        |
-> |  0   |  1  |  0  |       1       | current state is off, set the curcuit to turn on, result is circuit turns on        |
-> |  0   |  1  |  1  |   (Invalid)   | current state is off, set the circuit to turn off and on, invalid                   |
-> |  1   |  0  |  0  | 1 (no change) | current state is on, did not turn on or off, so after change is same/ no change     |
-> |  1   |  0  |  1  |       0       | current state is on, reset the circuit to be off, circuit was on, it will be off    |
-> |  1   |  1  |  0  |       1       | current state is on, set the curcuit to turn on, circuit was already on, will be on |
-> |  1   |  1  |  1  |   (Invalid)   | current state is on, set the circuit to turn off and on, invalid                    |
->
-> ```md
-> ### SR flip-flop Excitation Table
-> ```
->
-> | Present state (Q) | Next state (Q+) | Required J | Required K |
-> | :---------------: | :-------------: | :--------: | :--------: |
-> |         0         |        0        |     0      |     X      |
-> |         0         |        1        |     1      |     0      |
-> |         1         |        0        |     0      |     1      |
-> |         1         |        1        |     X      |     0      |
->
+
+| Q(t) |  S  |  R  |    Q(t+1)     | explanation                                                                         |
+| :--: | :-: | :-: | :-----------: | ----------------------------------------------------------------------------------- |
+|  0   |  0  |  0  | 0 (no change) | current state is off, did not turn on or off, so after change is same/ no change    |
+|  0   |  0  |  1  |       0       | current state is off, reset the circuit to be off, ultimately it will be off        |
+|  0   |  1  |  0  |       1       | current state is off, set the curcuit to turn on, result is circuit turns on        |
+|  0   |  1  |  1  |   (Invalid)   | current state is off, set the circuit to turn off and on, invalid                   |
+|  1   |  0  |  0  | 1 (no change) | current state is on, did not turn on or off, so after change is same/ no change     |
+|  1   |  0  |  1  |       0       | current state is on, reset the circuit to be off, circuit was on, it will be off    |
+|  1   |  1  |  0  |       1       | current state is on, set the curcuit to turn on, circuit was already on, will be on |
+|  1   |  1  |  1  |   (Invalid)   | current state is on, set the circuit to turn off and on, invalid                    |
+
+### SR flip-flop Excitation Table
+
+| Present state (Q) | Next state (Q+) | Required J | Required K |
+| :---------------: | :-------------: | :--------: | :--------: |
+|         0         |        0        |     0      |     X      |
+|         0         |        1        |     1      |     0      |
+|         1         |        0        |     0      |     1      |
+|         1         |        1        |     X      |     0      |
+
 > [!NOTE]  
 > Here, X means “don't care” — either 0 or 1 will work.
->
-> ```md
-> #### How standard SR excitation table came
-> ```
->
+
+
+### How standard SR excitation table came
+
 > - Q / Q(t) = Before change
 > - Q+ / Q(t+1) = After change
 > - Match the Q and Q+ with SR flip-flop operation table before and after, Q(t) and Q(t+1).
->
-> |  Q  | Q+  | Possible SR combinations | Simplified S | Simplified R |
-> | :-: | :-: | ------------------------ | :----------: | :----------: |
-> |  0  |  0  | 00, 01                   |      0       |      X       |
-> |  0  |  1  | 10                       |      1       |      0       |
-> |  1  |  0  | 01                       |      0       |      1       |
-> |  1  |  1  | 00, 10                   |      X       |      0       |
->
-> ---
->
+
+ |  Q  | Q+  | Possible SR combinations | Simplified S | Simplified R |
+ | :-: | :-: | ------------------------ | :----------: | :----------: |
+ |  0  |  0  | 00, 01                   |      0       |      X       |
+ |  0  |  1  | 10                       |      1       |      0       |
+ |  1  |  0  | 01                       |      0       |      1       |
+ |  1  |  1  | 00, 10                   |      X       |      0       |
+
+
 > ### SR flip flop diagram
 >
-> ![mealy diagram](pics/sr_flip-flop.png)
->
+> ![SR_flip-flop_diagram](pics/sr_flip-flop.png)
 
-<hr style="height: 4px; background-color: yellow; border: none;">
 
-> ```md
-> ### JK Operation / Criteria Table
-> ```
->
- [!IMPORTANT]
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
+  <rect width="1200" height="4" fill="#FFFF00"/>
+</svg>
+
+# JK
+
+### JK Operation / Criteria Table
+
  | J | K | Operation |
  |:---:|:---:|---|
  | 0 | 0 | Hold/ no change — keep the current state |
@@ -113,9 +116,8 @@
  | 1 | 0 | Set — set output to 1 |
  | 1 | 1 | Toggle — change to the opposite state |
 >
-> ```md
-> # JK flip-flop Characteristic / Truth Table
-> ```
+
+### JK flip-flop Characteristic / Truth Table
 
  > - match J, K operations with JK operation table
 
@@ -130,9 +132,8 @@
  |  1   |  1  |  0  |       1       | current state is on, Set operation, output is 1     |
  |  1   |  1  |  1  |  0(opposite)  | current state is on, Toggle operation, output is 0  |
 
-> ```md
-> ### JK flip-flop excitation table
-> ```
+
+### JK flip-flop excitation table
 
  | Present state (Q) | Next state (Q+) | Required J | Required K |
  | :---------------: | :-------------: | :--------: | :--------: |
@@ -141,10 +142,9 @@
  |         1         |        0        |     X      |     1      |
  |         1         |        1        |     X      |     0      |
 
-> ```md
-> ### How standard JK exirement table came
-> ```
->
+
+### How standard JK exirement table came
+
 > - Q / Q(t) = Before change
 > - Q+ / Q(t+1)= After change
 > - match the Q and Q+ with JK flip-flops table before and after, Q(t) and Q(t+1)
@@ -159,7 +159,7 @@
 > [!NOTE]
 > Here, X means “don't care” — either 0 or 1 will work.
 
->
+
 > ### JK flip flop diagram
 >
 > ![JK_flip-flop_diagram](pics/jk_flip-flop.png)
@@ -168,23 +168,25 @@
 >
 > S=1,R=1, forbidden condition, outputs invalid  
 > J=1,K=1, produces toggle, output is opposite of input
->
-<hr style="height: 4px; background-color: yellow; border: none;">
 
-> ```md
-> ### D Operation / Criteria Table
-> ```
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
+  <rect width="1200" height="4" fill="#FFFF00"/>
+</svg>
+
+# D Flip-Flop
+
+### D Operation / Criteria Table
+
  |  D  | Operation               |
  | :-: | ----------------------- |
  |  0  | Reset — set output to 0 |
  |  1  | Set — set output to 1   |
 
-> ```md
-> ### D flip-flop Characteristic / Truth Table
-> ```
->
+
+### D flip-flop Characteristic / Truth Table
+
 > - Match D input with the D operation table.
->
+
  | Q(t) |  D  | Q(t+1) | explanation                                      |
  | :--: | :-: | :----: | ------------------------------------------------ |
  |  0   |  0  |   0    | Current state is off, D = 0, so output remains 0 |
@@ -192,9 +194,7 @@
  |  1   |  0  |   0    | Current state is on, D = 0, so output becomes 0  |
  |  1   |  1  |   1    | Current state is on, D = 1, so output remains 1  |
 
-> ```md
-> ### D flip-flop Excitation Table
-> ```
+### D flip-flop Excitation Table
 
  | Present state (Q) | Next state (Q+) | Required D |
  | :---------------: | :-------------: | :--------: |
@@ -203,10 +203,8 @@
  |         1         |        0        |     0      |
  |         1         |        1        |     1      |
 
->```md
-> ### How standard D excitation table came
-> ```
->
+### How standard D excitation table came
+
 > - Q / Q(t) = Before change
 > - Q+ / Q(t+1) = After change
 > - Match the Q and Q+ with the D flip-flop characteristic table before and after, Q(t) and Q(t+1).
@@ -226,7 +224,12 @@
 >
 > ![D flip-flop diagram](pics/d_flip-flop.png)
 >
-<hr style="height: 4px; background-color: yellow; border: none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
+  <rect width="1200" height="4" fill="#FFFF00"/>
+</svg>
+
+# T Flip-Flop
 
 ### T Operation / Criteria Table
 
@@ -253,10 +256,8 @@
 |         0         |        1        |     1      |
 |         1         |        0        |     1      |
 |         1         |        1        |     0      |
-> ```md
-> ### How standard T excitation table came
-> ```
->
+### How standard T excitation table came
+
 > - Q / Q(t) = Before change
 > - Q+ / Q(t+1) = After change
 > - Match the Q and Q+ with the T flip-flop characteristic table before and after, Q(t) and Q(t+1).
@@ -272,4 +273,7 @@
 >
 > ![T flip-flop diagram](pics/t_flip-flop.png)
 >
-<hr style="height: 4px; background-color: yellow; border: none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="4">
+  <rect width="1200" height="4" fill="#FFFF00"/>
+</svg>
