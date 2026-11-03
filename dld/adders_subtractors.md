@@ -54,7 +54,7 @@ $C = XY + (X \oplus Y) \cdot Z$
 > - Half adders add only upto 2 bits. To add two binary numbers, we need to add 3 bits, including the carry.    
 > - Z = Carry in, C = Carry out
 
-#### **Kmap for S**
+### **Kmap for S**
 | | y'z'(00) |y'z(01) |yz(11) |yz'(10) |
 |:-: |:-:|:-:|:-:|:-:|
 x'(0) | |1| | 1|
@@ -70,7 +70,7 @@ $= XY + (X \oplus Y)Z + XYZ$ \
 $= XY + (X \oplus Y)Z$
 
 
-#### **Kmap for C**
+### **Kmap for C**
 | | y'z'(00) |y'z(01) |yz(11) |yz'(10) |
 | :-: |:-:|:-:|:-:|:-:|
 |x'(0) | | |1| |
@@ -133,12 +133,12 @@ $B = X' \cdot Y$
 ![full_subtractor_logical_diagram](pics/full_subtractor_logical_diagram.png) 
 
 #### Boolean Expression
-$D = A \oplus B \oplus Bin$  
-$Bout = A'B + A'Bin + BBin$
+$D = A \oplus ( B \oplus Bin )$  
+$Bout = (A \cdot (B \oplus Bin)' ) + B' \cdot Bin$
 
->```md
-> # Design Precedure of Full Subtractor
->```
+
+## Design Precedure of Full Subtractor
+
 
 <img src="pics/breaker.png" width=100% height=200px>
 
