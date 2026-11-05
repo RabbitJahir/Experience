@@ -17,15 +17,17 @@
 <img src="https://placehold.co/1200x4/FFFF00/FFFF00.png" width="100%" height="4" alt="Yellow divider">
 
 > ```md
-> # Types of table
+> # We will learn
 > ```
 >
 > 1. Operation / Criteria Table (Rules for each flip-flop)
 > 2. Characteristic Table (Full Version)
 > 3. Excitation Table (X Version)
+> 4. Circuit & Logical diagram
+> 5. Characteristic equation : A characteristic equation is a Boolean expression that describes the relationship between the inputs, present state, and next state of a flip-flop.
 
 > ```md
-> # Characteristic table
+> # Keywords
 > ```
 >
 > - Q(t) = current state, before the update
@@ -49,7 +51,7 @@
 | 1 | 0 | Set — set output to 1 |
 | 1 | 1 | Invalid — forbidden state |
 
-> ### SR flip-flop Characteristic / Truth Table
+### SR flip-flop Characteristic / Truth Table
 
 > - match SR opeations with SR operation table
 
@@ -66,12 +68,15 @@
 
 ### SR flip-flop Excitation Table
 
-| Present state (Q) | Next state (Q+) | Required J | Required K |
+| Present state Q(t) | Next state Q(t+1) | Required S | Required R |
 | :---------------: | :-------------: | :--------: | :--------: |
 |         0         |        0        |     0      |     X      |
 |         0         |        1        |     1      |     0      |
 |         1         |        0        |     0      |     1      |
 |         1         |        1        |     X      |     0      |
+
+### Characteristic Equation
+$ Q(t+1) = S + R' Q$
 
 > [!NOTE]  
 > Here, X means “don't care” — either 0 or 1 will work.
@@ -79,11 +84,11 @@
 
 ### How standard SR excitation table came
 
-> - Q / Q(t) = Before change
-> - Q+ / Q(t+1) = After change
-> - Match the Q and Q+ with SR flip-flop operation table before and after, Q(t) and Q(t+1).
+> - Q(t) = Before change
+> - Q(t+1) = After change
+> - Match the Q and Q(t+1) with SR flip-flop operation table before and after, Q(t) and Q(t+1).
 
- |  Q  | Q+  | Possible SR combinations | Simplified S | Simplified R |
+ |  Q(t)  | Q(t+1)  | Possible SR combinations | Simplified S | Simplified R |
  | :-: | :-: | ------------------------ | :----------: | :----------: |
  |  0  |  0  | 00, 01                   |      0       |      X       |
  |  0  |  1  | 10                       |      1       |      0       |
@@ -91,10 +96,11 @@
  |  1  |  1  | 00, 10                   |      X       |      0       |
 
 
-> ### SR flip flop diagram
->
-> ![SR_flip-flop_diagram](pics/sr_flip-flop.png)
+### SR flip flop circuit diagram
+![sr_circuit_diagram](pics/sr_circuit_diagram.png)
 
+### SR flip flop logical diagram
+![sr_logical_diagram](pics/sr_logical_diagram.png)
 
 <img src="pics/breaker.png" width=100% height=200px>
 
@@ -129,21 +135,23 @@
 
 ### JK flip-flop excitation table
 
- | Present state (Q) | Next state (Q+) | Required J | Required K |
+ | Present state Q(t) | Next state Q(t+1) | Required J | Required K |
  | :---------------: | :-------------: | :--------: | :--------: |
  |         0         |        0        |     0      |     X      |
  |         0         |        1        |     1      |     X      |
  |         1         |        0        |     X      |     1      |
  |         1         |        1        |     X      |     0      |
 
+### Characteristic Equation
+$Q(t+1) = J \cdot Q' + J' \cdot Q $
 
-### How standard JK exirement table came
+### How standard JK excitation table came
 
-> - Q / Q(t) = Before change
-> - Q+ / Q(t+1)= After change
-> - match the Q and Q+ with JK flip-flops table before and after, Q(t) and Q(t+1)
+> - Q(t) = Before change
+> - Q(t+1)= After change
+> - match the Q(t) and Q(t+1) with JK flip-flops table before and after, Q(t) and Q(t+1)
 >
- |  Q  | Q+  | Possible JK combinations | Simplified J | Simplified K |
+ |  Q(t)  | Q(t+1)  | Possible JK combinations | Simplified J | Simplified K |
  | :-: | :-: | ------------------------ | :----------: | :----------: |
  |  0  |  0  | 00, 01                   |      0       |      X       |
  |  0  |  1  | 10, 11                   |      1       |      X       |
@@ -154,9 +162,11 @@
 > Here, X means “don't care” — either 0 or 1 will work.
 
 
-> ### JK flip flop diagram
->
-> ![JK_flip-flop_diagram](pics/jk_flip-flop.png)
+### JK flip flop circuit diagram
+![jk_circuit_diagram](pics/jk_circuit_diagram.png)
+
+### JK flip flop logical diagram
+![jk_logical_diagram](pics/jk_logical_diagram.png)
 
 > ### Difference between JK and SR
 >
@@ -188,7 +198,7 @@
 
 ### D flip-flop Excitation Table
 
- | Present state (Q) | Next state (Q+) | Required D |
+ | Present state Q(t) | Next state Q(t+1) | Required D |
  | :---------------: | :-------------: | :--------: |
  |         0         |        0        |     0      |
  |         0         |        1        |     1      |
@@ -197,25 +207,28 @@
 
 ### How standard D excitation table came
 
-> - Q / Q(t) = Before change
-> - Q+ / Q(t+1) = After change
-> - Match the Q and Q+ with the D flip-flop characteristic table before and after, Q(t) and Q(t+1).
+> - Q(t) = Before change
+> - Q(t+1) = After change
+> - Match the Q and Q(t+1) with the D flip-flop characteristic table before and after, Q(t) and Q(t+1).
 
- |  Q  | Q+  | Possible D combinations | Simplified D |
+ |  Q(t)  | Q(t+1)  | Possible D combinations | Simplified D |
  | :-: | :-: | :---------------------: | :----------: |
  |  0  |  0  |            0            |      0       |
  |  0  |  1  |            1            |      1       |
  |  1  |  0  |            0            |      0       |
  |  1  |  1  |            1            |      1       |
 
+### Characteristic Equation
+$Q(t+1) = D$ 
+
 > [!NOTE]
 > D is always equal to the next state.
 
->
-> ### D flip flop diagram
->
-> ![D flip-flop diagram](pics/d_flip-flop.png)
->
+### D flip flop circuit diagram
+![d_circuit_diagram](pics/d_circuit_diagram.png)
+
+### D flip flop logical diagram
+![d_logical_diagram](pics/d_logical_diagram.png)
 
 <img src="pics/breaker.png" width=100% height=200px>
 
@@ -241,27 +254,72 @@
  |  1   |  1  | 0 (opposite)  | Current state is on, Toggle operation, so output becomes 0  |
 
 ### T flip-flop Excitation Table
-| Present state (Q) | Next state (Q+) | Required T |
+| Present state Q(t) | Next state Q(t+1) | Required T |
 | :---------------: | :-------------: | :--------: |
 |         0         |        0        |     0      |
 |         0         |        1        |     1      |
 |         1         |        0        |     1      |
 |         1         |        1        |     0      |
+
+### Characteristic Equation
+$ Q(t+1) = T' \cdot Q + T \cdot Q'$\
+$ Q(t+1) = T \oplus Q$
+
 ### How standard T excitation table came
 
 > - Q / Q(t) = Before change
-> - Q+ / Q(t+1) = After change
-> - Match the Q and Q+ with the T flip-flop characteristic table before and after, Q(t) and Q(t+1).
+> - Q(t+1) / Q(t+1) = After change
+> - Match the Q and Q(t+1) with the T flip-flop characteristic table before and after, Q(t) and Q(t+1).
 
- |  Q  | Q+  | Possible T combinations | Simplified T |
+ |  Q(t)  | Q(t+1)  | Possible T combinations | Simplified T |
  | :-: | :-: | :---------------------: | :----------: |
  |  0  |  0  |            0            |      0       |
  |  0  |  1  |            1            |      1       |
  |  1  |  0  |            1            |      1       |
  |  1  |  1  |            0            |      0       |
 
-> ### T flip flop diagram
->
-> ![T flip-flop diagram](pics/t_flip-flop.png)
->
+### T flip flop circuit diagram
+![t_circuit_diagram](pics/t_circuit_diagram.png)
+
+### T flip flop logical diagram
+![t_logical_diagram](pics/t_logical_diagram.png)
+
 <img src="pics/breaker.png" width=100% height=200px>
+
+# Conversion from one flip flop to another
+
+### JK to D
+
+> Show Characteristic equations of both
+
+> make the table using Present state and inputs, find next state and next flip-flop operation
+
+| D	| Q(t)	|Q(t+1)	|J	|K|
+|:-:|:-:|:-:|:-:|:-:|
+| 0	|0|	0|	0	|X |
+| 0	|1|	0|	X	|1 |
+| 1	|0|	1|	1	|X |
+| 1	|1|	1|	X	|0 |
+
+Kmap for J and K using inputs D and Q:  
+$J =D, K = D'$
+
+### D to JK
+
+> Show Characteristic equations of both
+
+> make the table using Present state and inputs, find next state and next flip-flop operation
+
+|J|	K|	Q(t) 	|Q(t+1)	|D|
+|:-:|:-:|:-:|:-:|:-:|
+|0|	0|	0|	0	|0|
+|0|	0|	1|	1	|1|
+|0|	1|	0|	0	|0|
+|0|	1|	1|	0	|0|
+|1|	0|	0|	1	|1|
+|1|	0|	1|	1	|1|
+|1|	1|	0|	1	|1|
+|1|	1|	1|	0	|0|
+
+Kmap for D using inputs J, K and Q(t):  
+$ D= J \cdot Q(t)' + K' \cdot Q(t)$
