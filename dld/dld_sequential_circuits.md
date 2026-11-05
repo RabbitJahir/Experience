@@ -189,7 +189,7 @@
 > - Make K map for A+ and B+
 > - When A/B = 0, We find JA / JB and KA/KB
 > - When A = 0, all columns with 0 becomes non-relevant, and vice versa when A = 1, columns with 1 non relevant. Same with B
->
+> - For A+ we ignore A, for B+ we ignore B
 
 <img src="pics/breaker.png" width=100% height=200px>
 

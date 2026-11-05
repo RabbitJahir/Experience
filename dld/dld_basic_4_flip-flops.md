@@ -76,7 +76,7 @@
 |         1         |        1        |     X      |     0      |
 
 ### Characteristic Equation
-$ Q(t+1) = S + R' Q$
+$Q(t+1) = S + R' Q$
 
 > [!NOTE]  
 > Here, X means “don't care” — either 0 or 1 will work.
@@ -143,7 +143,7 @@ $ Q(t+1) = S + R' Q$
  |         1         |        1        |     X      |     0      |
 
 ### Characteristic Equation
-$Q(t+1) = J \cdot Q' + J' \cdot Q $
+$Q(t+1) = J \cdot Q' + K' \cdot Q $
 
 ### How standard JK excitation table came
 
@@ -292,7 +292,7 @@ $ Q(t+1) = T \oplus Q$
 
 > Show Characteristic equations of both
 
-> make the table using Present state and inputs, find next state and next flip-flop operation
+> make characteristic table using Present state and input(D), find next state and next flip-flop operation
 
 | D	| Q(t)	|Q(t+1)	|J	|K|
 |:-:|:-:|:-:|:-:|:-:|
