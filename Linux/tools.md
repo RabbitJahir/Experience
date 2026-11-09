@@ -1,0 +1,2 @@
+- gparted ( pendrive memory allocation )
+- 
