@@ -1,2 +1,11 @@
 - gparted ( pendrive memory allocation )
-- 
+- baobao,  qdirstat (see space in gui), ncdu (see current dir space in terminal)
+- poppler-utils (pdf tools)
+- vnstat, iftop, nload (See network usage)
+- bmon
+- smartmontools
+- dmidecode
+- flameshot (screenshots, shift + prtsc)
+- bleachbit (clean linux)
+- meld
+- burpsuite
