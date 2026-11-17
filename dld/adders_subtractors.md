@@ -48,33 +48,25 @@ $C = XY + (X \oplus Y) \cdot Z$
 | 1 | 1 | 1 | 1 | 1 |
 
 
-## Design Procedure of Full Adder
+## Design Procedure of Full Adder from half adder
 
 > - Half adders add only upto 2 bits. To add two binary numbers, we need to add 3 bits, including the carry.    
 > - Z/Cin = Carry in, C = Carry out
 
-### **Kmap for S**
-| | y'Cin'(00) |y'Cin(01) |yCin(11) |yCin'(10) |
-|:-: |:-:|:-:|:-:|:-:|
-x'(0) | |1| | 1|
-x(1)  |1| |1|  | 
+| Half adder | Full adder |
+|:-:|:-:|
+| Inputs: A, B | Inputs: A, B, Cin|
+| S ,Cout| S, Cout|
 
+### Half Adder
+#### Boolean Expression
+$S = XY' + X'Y$\
+$C = XY $
+
+### Full Adder
 #### Boolean Expression :
 
-
-$C = X'Y'Cin + X'YCin' +XY'Cin'  + XYCin$\
-$= Cin(X'Y' + XY) + Cin'(X'Y+XY')$\
-$= Cin(X \oplus Y)' + Cin'(X \oplus Y)$\
-$=X \oplus Y \oplus Cin$
-
-### **Kmap for C**
-| | y'Cin'(00) |y'Cin(01) |yCin(11) |yCin'(10) |
-| :-: |:-:|:-:|:-:|:-:|
-|x'(0) | | |1| |
-|x(1)  | |1|1|1| 
-
-#### Boolean Expression :
-
+$S=X \oplus Y \oplus Cin$\
 $C = XCin + YCin + XY$
 
 
@@ -129,7 +121,7 @@ $Bout = (A \cdot (B \oplus Bin)' ) + B' \cdot Bin$
 | 1 | 1 | 1 | 1 | 1 |
 
 
-## Design Precedure of Full Subtractor from Full adder
+## Design Procedure of Full Subtractor using Full adder
 
 ### Difference between full adder and subtractor
 |Full Adder	|Full Subtractor|
@@ -138,24 +130,36 @@ $Bout = (A \cdot (B \oplus Bin)' ) + B' \cdot Bin$
 |Sum (S)	|Difference (D) |
 |Carry (Cout) |	Borrow (Bout) |
 
-### **Kmap for D**
-| | B' Bin'(00) |B' Bin(01) |B Bin(11) |B Bin'(10) |
-|:-: |:-:|:-:|:-:|:-:|
-A'(0) | |1| | 1|
-A(1)  |1| |1|  |
 
+### Full Subtractor
 #### Boolean Expression
-$D = A'B' Bin + A'B Bin' + AB' Bin' + AB Bin$\
-$D = A \oplus B \oplus Bin$
 
-### **Kmap for Bout**
-| | B' Bin'(00) |B' Bin(01) |B Bin(11) |B Bin'(10) |
-|:-: |:-:|:-:|:-:|:-:|
-A'(0) | |1|1| 1|
-A(1)  | | |1|  |
+$D = A \oplus B \oplus Bin$\
+$Bout = A'B + A' Bin + B Bin$
 
+
+### Full Adder
 #### Boolean Expression
-$Bout = A' Bin + A' B + B Bin$
+
+$S = X \oplus Y \oplus Cin$\
+$Cout = XY + X Cin + YCin$
+
+### Circuit Diagram of Full adder, point out the half adders and the OR gate
+---
+
+#### To implement subtraction using addition, use 2's complement:
+
+$ A-B-Bin = A +B' + Bin' $
+
+#### Therefore, comparing Full Adder inputs and outputs with Full Subtractor
+$X=A$\
+$Y=B'$\
+$Cin = Bin'$\
+$S=D$\
+$Cout = Bout'$
+
+### Circuit diagram with examples
+![circuit_diagram](pics/from_full-adder_to_full-subtractor_circuit-diagram.png)
 
 <img src="pics/breaker.png" width=100% height=200px>
 
@@ -172,3 +176,13 @@ $Bout = A' Bin + A' B + B Bin$
 ![4-bit_parallel_adder_logical_diagram](pics/4-bit_parallel_adder_logical_diagram.jpg)
 
 ### Truth Table
+
+<img src="pics/breaker.png" width=100% height=200px>
+
+## 9 bit parallel adder, using 4 bit parallel adder and full adders connected in cascade
+
+- cascade means connecting multiple circuits in a sequence, where output of one circuit becomes input of next circuit
+
+#### Components
+1. Two 4-bit parallel adders
+2. One full adder

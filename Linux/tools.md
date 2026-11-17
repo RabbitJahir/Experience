@@ -9,3 +9,4 @@
 - bleachbit (clean linux)
 - meld
 - burpsuite
+- wget ( wget -c download_link, resume any kind of downloads easily)
