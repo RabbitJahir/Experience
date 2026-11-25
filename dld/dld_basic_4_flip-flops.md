@@ -1,3 +1,11 @@
+# Some theory pages from Lecture 10
+![Lec-10_1](flip_flop_images/Lec-10_1.png)
+![Lec-10_2](flip_flop_images/Lec-10_2.png)
+![Lec-10_3](flip_flop_images/Lec-10_3.png)
+![Lec-10_4](flip_flop_images/Lec-10_4.png)
+
+<img src="https://placehold.co/1200x4/FFFF00/FFFF00.png" width="100%" height="4" alt="Yellow divider">
+
 > ```md
 > # Four Basic types flip-flops
 > ```
