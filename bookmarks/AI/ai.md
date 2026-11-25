@@ -13,3 +13,5 @@
 > https://www.researchrabbit.ai/
 
 > https://aiengineeringfromscratch.com/
+
+> manus.im

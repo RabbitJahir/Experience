@@ -165,7 +165,7 @@
 | 1|1 | 0 | 00 | 1 | 0/1 |
 | 1|1 | 1 | 10 | 0 | 1/0 |
  
-![mealy diagram](pics/mealy_1.png)
+![mealy diagram](flip_flop_images/mealy_1.png)
 
 <img src="pics/breaker.png" width=100% height=200px>
 

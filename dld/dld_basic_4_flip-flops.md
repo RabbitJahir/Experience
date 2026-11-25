@@ -97,10 +97,10 @@ $Q(t+1) = S + R' Q$
 
 
 ### SR flip flop circuit diagram
-![sr_circuit_diagram](pics/sr_circuit_diagram.png)
+![sr_circuit_diagram](flip_flop_images/sr_circuit_diagram.png)
 
 ### SR flip flop logical diagram
-![sr_logical_diagram](pics/sr_logical_diagram.png)
+![sr_logical_diagram](flip_flop_images/sr_logical_diagram.png)
 
 <img src="pics/breaker.png" width=100% height=200px>
 
@@ -163,10 +163,10 @@ $Q(t+1) = J \cdot Q' + K' \cdot Q $
 
 
 ### JK flip flop circuit diagram
-![jk_circuit_diagram](pics/jk_circuit_diagram.png)
+![jk_circuit_diagram](flip_flop_images/jk_circuit_diagram.png)
 
 ### JK flip flop logical diagram
-![jk_logical_diagram](pics/jk_logical_diagram.png)
+![jk_logical_diagram](flip_flop_images/jk_logical_diagram.png)
 
 > ### Difference between JK and SR
 >
@@ -225,10 +225,10 @@ $Q(t+1) = D$
 > D is always equal to the next state.
 
 ### D flip flop circuit diagram
-![d_circuit_diagram](pics/d_circuit_diagram.png)
+![d_circuit_diagram](flip_flop_images/d_circuit_diagram.png)
 
 ### D flip flop logical diagram
-![d_logical_diagram](pics/d_logical_diagram.png)
+![d_logical_diagram](flip_flop_images/d_logical_diagram.png)
 
 <img src="pics/breaker.png" width=100% height=200px>
 
@@ -279,10 +279,10 @@ $ Q(t+1) = T \oplus Q$
  |  1  |  1  |            0            |      0       |
 
 ### T flip flop circuit diagram
-![t_circuit_diagram](pics/t_circuit_diagram.png)
+![t_circuit_diagram](flip_flop_images/t_circuit_diagram.png)
 
 ### T flip flop logical diagram
-![t_logical_diagram](pics/t_logical_diagram.png)
+![t_logical_diagram](flip_flop_images/t_logical_diagram.png)
 
 <img src="pics/breaker.png" width=100% height=200px>
 
