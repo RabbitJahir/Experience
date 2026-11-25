@@ -1,3 +1,9 @@
+![Lec-7_CC_SC](add_sub_images/Lec-7_CC_SC.png)
+---
+![Lec-7_why_better_to_use_IC](add_sub_images/Lec-7_why_better_to_use_IC.png)
+
+<img src="pics/breaker.png" width=100% height=200px>
+
 # Half adder
 
 ### Circuit Diagram
